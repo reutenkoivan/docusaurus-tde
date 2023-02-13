@@ -1,0 +1,12 @@
+.changelogRoot {
+    display: flex;
+    margin: 5vh;
+}
+
+.changelogTitle {
+    margin: 3rem;
+}
+
+.changelogListRoot {
+  padding-left: 3rem;
+}

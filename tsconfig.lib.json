@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "strict": false,
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic",
+    ]
+  },
+  "exclude": [
+    "**/__tests__/**",
+  ]
+}

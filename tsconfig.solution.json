@@ -1,0 +1,55 @@
+{
+    "exclude": [
+        "**/*"
+    ],
+    "references": [
+        {
+            "path": "packages/cli"
+        },
+        {
+            "path": "packages/plugins/webpack-patcher"
+        },
+        {
+            "path": "packages/hooks/custom-css"
+        },
+        {
+            "path": "packages/hooks/other-documentations"
+        },
+        {
+            "path": "packages/hooks/package-documentation"
+        },
+        {
+            "path": "packages/hooks/debug"
+        },
+        {
+            "path": "packages/hooks/custom-links"
+        },
+        {
+            "path": "packages/hooks/content"
+        },
+        {
+            "path": "packages/hooks/gtag"
+        },
+        {
+            "path": "packages/hooks/pvm-changelog"
+        },
+        {
+            "path": "packages/core/utils"
+        },
+        {
+            "path": "packages/hooks/static-assets"
+        },
+        {
+            "path": "packages/hooks/react-pages"
+        },
+        {
+            "path": "packages/core/di"
+        },
+        {
+            "path": "packages/core/app"
+        },
+        {
+            "path": "packages/themes/components"
+        }
+    ]
+}

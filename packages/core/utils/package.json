@@ -1,0 +1,18 @@
+{
+  "name": "@pwa-doc/utils",
+  "version": "0.0.0-stub",
+  "license": "MIT",
+  "main": "lib/index",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+  }
+}

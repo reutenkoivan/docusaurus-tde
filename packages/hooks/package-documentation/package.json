@@ -1,0 +1,23 @@
+{
+  "name": "@pwa-doc/package-documentation-hook",
+  "version": "0.0.0-stub",
+  "license": "MIT",
+  "main": "lib/index",
+  "files": [
+    "doc",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@pwa-doc/di": "^0.0.0-stub",
+    "@docusaurus/plugin-content-docs": "2.0.0-beta.18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "pwa-doc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Общие решения по документированию инструментов и продуктов привлечения.",
+  "info": {
+    "type": "tech",
+    "doc": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc/",
+    "slack": "#pwa-delivery-ci",
+    "owner": "@ext.ireutenko"
+  },
+  "author": "Ivan Reutenko <ext.ireutenko@tcsbank.ru>",
+  "workspaces": [
+    "packages/*",
+    "packages/hooks/*",
+    "packages/core/*",
+    "packages/plugins/*",
+    "packages/themes/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn --prefer-offline && yarn build",
+    "bootstrap:ci": "yarn --frozen-lockfile --ignore-optional && yarn build",
+    "references": "node ./scripts/remove-tsc-output.js && node ./scripts/copy-none-ts-files.js && yarn fix-ts-references --fix",
+    "build": "yarn references && tsc -b ./tsconfig.solution.json",
+    "watch": "yarn references && tsc -b ./tsconfig.solution.json --watch",
+    "lint": "TIMING=1 eslint . --ext .js,.ts,.tsx,.jsx --report-unused-disable-directives",
+    "format": "eslint . --ext .js,.ts,.tsx,.jsx --fix"
+  },
+  "devDependencies": {
+    "@delivery-ci/notify": "^2.0.0",
+    "@tinkoff-monorepo/fix-ts-references": "^1.8.4",
+    "@tinkoff/pvm": "0.53.7",
+    "@tsconfig/docusaurus": "^1.0.4",
+    "@types/node": "^14.17.34",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "glob": "^7.2.0",
+    "signales": "^2.0.5",
+    "typescript": "^4.3.5"
+  }
+}

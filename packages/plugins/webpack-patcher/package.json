@@ -1,0 +1,22 @@
+{
+  "name": "@pwa-doc/webpack-patcher-plugin",
+  "version": "0.0.0-stub",
+  "license": "MIT",
+  "files": [
+    "doc",
+    "lib",
+    "src"
+  ],
+  "main": "lib/index",
+  "dependencies": {
+    "@pwa-doc/utils": "^0.0.0-stub"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+  }
+}

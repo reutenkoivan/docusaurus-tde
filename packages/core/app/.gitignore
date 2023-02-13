@@ -1,0 +1,15 @@
+# Dependencies
+/node_modules
+!root/src/theme/SearchBar/lib
+
+# Generated files
+.docusaurus
+.cache-loader
+metaData.json
+changelogData.json
+releaseList.json
+root/static/logo.svg
+root/src/pages/
+root/src/atoms/
+root/src/utils/
+root/static/custom

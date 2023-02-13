@@ -1,0 +1,111 @@
+.only-mr:
+  interruptible: true
+  only:
+    - merge_requests
+    - web
+
+### INSTALL ###########################################################################################################
+
+install-mr:
+  image: $NODE_IMAGE
+  stage: install
+  extends:
+    - .only-mr
+  script:
+    - yarn bootstrap:ci
+  artifacts:
+    paths:
+      - node_modules
+      - ./**/node_modules
+      - ./packages/**/lib
+    expire_in: 5h
+
+### BUILD #############################################################################################################
+
+build:docs-mr:
+  image: $NODE_IMAGE
+  stage: build
+  extends:
+    - .only-mr
+  variables:
+    BASE_URL: "/pfp-static/${CI_PROJECT_NAME}/${CI_COMMIT_REF_SLUG}/"
+  script:
+    - DEBUG="search-local:*" yarn pwa-doc build
+  needs:
+    - install-mr
+  artifacts:
+    paths:
+      - public
+
+build:mark-mr:
+  image: $NODE_IMAGE
+  stage: build
+  extends:
+    - .only-mr
+  variables:
+    PVM_LL: 'debug'
+  script:
+    - yarn pvm mark-pr
+  needs:
+    - install-mr
+
+### TESTS #############################################################################################################
+
+test:lint:
+  image: $NODE_IMAGE
+  stage: tests
+  extends:
+    - .only-mr
+  script:
+    - yarn lint
+  needs:
+    - install-mr
+
+### UPLOAD_STATIC #####################################################################################################
+
+static:deploy-mr:
+  stage: upload_static
+  extends:
+    - .only-mr
+    - .upload_s3_static
+  variables:
+    PFP_STATIC_PATH: public
+  environment:
+    on_stop: delete:static-mr
+  needs:
+    - build:docs-mr
+
+### CLEANUP ###########################################################################################################
+
+jira:common tasks-to-merging:setup:
+  stage: cleanup
+  extends:
+    - .only-mr
+    - .jira:common tasks-to-merging:setup
+
+jira:common tasks-to-merging:
+  stage: cleanup
+  extends:
+    - .only-mr
+    - .jira:common tasks-to-merging
+
+delete:static-mr:
+  stage: cleanup
+  extends:
+    - .only-mr
+    - .delete_static
+  variables:
+    GIT_STRATEGY: none
+
+notify:passed-mr:
+  stage: cleanup
+  when: on_success
+  extends:
+    - .only-mr
+    - .delivery-notify-passed-mr
+
+notify:broken-mr:
+  stage: cleanup
+  extends:
+    - .only-mr
+    - .delivery-notify-broken-mr

@@ -1,0 +1,40 @@
+{
+  "name": "@pwa-doc/app",
+  "version": "0.0.0-stub",
+  "license": "MIT",
+  "main": "lib/index",
+  "files": [
+    "doc",
+    "lib",
+    "src",
+    "root"
+  ],
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-beta.18",
+    "@docusaurus/theme-classic": "2.0.0-beta.18",
+    "@mdx-js/react": "^1.6.21",
+    "@pwa-doc/utils": "^0.0.0-stub",
+    "@pwa-doc/di": "^0.0.0-stub",
+    "@pwa-doc/webpack-patcher-plugin": "^0.0.0-stub",
+    "@svgr/webpack": "^5.5.0",
+    "clsx": "^1.1.1",
+    "file-loader": "^6.2.0",
+    "prism-react-renderer": "^1.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "url-loader": "^4.1.1",
+    "@easyops-cn/docusaurus-search-local": "0.21.4"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "2.0.0-beta.18",
+    "@tsconfig/docusaurus": "^1.0.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+  }
+}

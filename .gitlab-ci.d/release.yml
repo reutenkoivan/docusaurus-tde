@@ -1,0 +1,65 @@
+.only-release:
+  only:
+    - /^release-/
+
+### INSTALL ###########################################################################################################
+
+install-release:
+  image: $NODE_IMAGE
+  stage: install
+  extends:
+    - .only-release
+  script:
+    - yarn bootstrap:ci
+  artifacts:
+    paths:
+      - node_modules
+      - ./**/node_modules
+      - ./packages/**/lib
+    expire_in: 5h
+
+### BUILD #############################################################################################################
+
+build:docs-release:
+  image: $NODE_IMAGE
+  stage: build
+  interruptible: true
+  extends:
+    - .only-release
+  variables:
+    BASE_URL: "/${CI_PROJECT_NAME}/"
+  script:
+    - yarn pwa-doc build
+  needs:
+    - install-release
+  artifacts:
+    paths:
+      - public
+
+### UPLOAD_STATIC #####################################################################################################
+
+static:deploy-release:
+  stage: upload_static
+  extends:
+    - .only-release
+    - .pages:deploy
+  needs:
+    - build:docs-release
+
+static:packages-release:
+  image: $NODE_IMAGE
+  stage: upload_static
+  extends:
+    - .only-release
+  script:
+    - pvm publish -s released --notify-script release-with-packages
+  needs:
+    - install-release
+
+### CLEANUP ###########################################################################################################
+
+notify:broken-release:
+  stage: cleanup
+  extends:
+    - .only-release
+    - .delivery-notify-broken-release

@@ -1,0 +1,38 @@
+variables:
+  FORCE_COLOR: '1'
+
+before_script:
+  - export PATH="$PATH:`pwd`/node_modules/.bin"
+
+stages:
+  - install
+  - build
+  - tests
+  - upload_static
+  - cleanup
+
+include:
+  # Загрузка файлов в s3
+  - project: 'ded-pwa/pwa-ci'
+    ref: master
+    file: '/gitlab-ci/pfp-utils.yml'
+  # Замена gitlab pages
+  - project: 'ded-pwa/pwa-ci'
+    ref: master
+    file: 'gitlab-ci/pages.yml'
+  # Общие переменные окружения
+  - project: 'ded-pwa/delivery-ci'
+    ref: master
+    file: '/.ext-gitlab.d/variables.yml'
+    # Нотификации
+  - project: 'ded-pwa/delivery-ci'
+    ref: 'notify-v2.0.0'
+    file: '/packages/notify/.ext-gitlab.d/.gitlab-ci.yml'
+    # Передвижение задач в jira
+  - project: 'ded-pwa/delivery-ci'
+    ref: 'jira-v1.1.5'
+    file: '/packages/jira-magic/.ext-gitlab.d/.gitlab-ci.yml'
+    # Локальные джобы
+  - '/.gitlab-ci.d/merge-request.yml'
+  - '/.gitlab-ci.d/master.yml'
+  - '/.gitlab-ci.d/release.yml'
