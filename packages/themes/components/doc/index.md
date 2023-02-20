@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /
-title: "@pwa-doc/components-theme"
+title: "@docusaurus-tde/components-theme"
 sidebar_label: Описание
 ---
 
@@ -24,23 +24,23 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/components-theme"
+yarn add -WD "@docusaurus-tde/components-theme"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/components-theme"
+npm i "@docusaurus-tde/components-theme"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Регистрация темы.
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 module.exports = {
     themes: [
-      '@pwa-doc/components-theme',
+      '@docusaurus-tde/components-theme',
     ]
 }
 ```

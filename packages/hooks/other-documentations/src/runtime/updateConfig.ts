@@ -1,6 +1,6 @@
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 import { artifactName } from '../constants'
 
 const componentsRoot = path.join(__dirname, '..', '..', 'components')
@@ -33,10 +33,10 @@ export const updateConfig: pwaDocDI.runtimeHook = (config, { props, context }) =
   const items = context.utils.lodash.get(config, 'themeConfig.navbar.items', [])
   const navbarButton = {
     to: 'external-links',
-    label: button.label || 'Внешние ссылки',
+    label: button.label || 'External links',
     position: button.position || 'right',
     className: 'header-external-links',
-    'aria-label': 'Внешние ссылки',
+    'aria-label': 'External links',
   }
 
   context.utils.lodash.set(config, 'themeConfig.navbar.items', [navbarButton, ...items])

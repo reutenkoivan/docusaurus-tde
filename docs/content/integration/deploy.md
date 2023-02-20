@@ -27,7 +27,7 @@ sidebar_position: 3
 но для CI необходимо настроить динамическую конфигурацию pathname.
 
 #### 1. Настраиваем конфиг:
-Добавляем настройку `baseUrl` в pwa-doc конфиг
+Добавляем настройку `baseUrl` в docusaurus-tde конфиг
 
 ```javascript
 module.exports = {
@@ -45,7 +45,7 @@ build:docs-mr:
     # Конфигурируем значение в конфиге.
     BASE_URL: "/pfp-static/${CI_PROJECT_NAME}/${CI_COMMIT_REF_SLUG}/"
   script:
-    - yarn pwa-doc build
+    - yarn docusaurus-tde build
   artifacts:
     paths:
       - public
@@ -60,7 +60,7 @@ build:docs-release:
     # Конфигурируем значение в конфиге.
     BASE_URL: "/${CI_PROJECT_NAME}/"
   script:
-    - yarn pwa-doc build
+    - yarn docusaurus-tde build
   artifacts:
     paths:
       - public

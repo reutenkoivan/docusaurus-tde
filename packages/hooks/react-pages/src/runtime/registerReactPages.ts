@@ -1,6 +1,6 @@
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const registerReactPages: pwaDocDI.runtimeHook = (config, { props, context }) => {
   const { root, routeBasePath = '/' } = props

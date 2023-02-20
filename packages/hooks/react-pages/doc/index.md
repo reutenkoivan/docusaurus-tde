@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/react-pages-hook"
+yarn add -WD "@docusaurus-tde/react-pages-hook"
 ```
 
 </TabItem>
@@ -30,7 +30,7 @@ yarn add -WD "@pwa-doc/react-pages-hook"
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/react-pages-hook"
+npm i "@docusaurus-tde/react-pages-hook"
 ```
 
 </TabItem>
@@ -73,12 +73,12 @@ export default MainPage
 
 #### 3. Регистрация хука
 
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 const path = require('path')
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/react-pages-hook', { root: path.join(__dirname, 'react-pages') }]
+      ['@docusaurus-tde/react-pages-hook', { root: path.join(__dirname, 'react-pages') }]
     ]
 }
 ```

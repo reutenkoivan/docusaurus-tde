@@ -22,24 +22,24 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/gtag-hook"
+yarn add -WD "@docusaurus-tde/gtag-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/gtag-hook"
+npm i "@docusaurus-tde/gtag-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Регистрация хука
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/gtag-hook', { trackingID: '<trackingID>' }],
+      ['@docusaurus-tde/gtag-hook', { trackingID: '<trackingID>' }],
     ]
 }
 ```

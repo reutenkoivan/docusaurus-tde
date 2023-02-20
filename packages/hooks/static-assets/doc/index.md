@@ -24,31 +24,31 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/static-assets-hook"
+yarn add -WD "@docusaurus-tde/static-assets-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/static-assets-hook"
+npm i "@docusaurus-tde/static-assets-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Создание директории.
-Создайте директорию `<root>/docs/assets` на одном уровне с `pwa-doc.config.js`.
+Создайте директорию `<root>/docs/assets` на одном уровне с `docusaurus-tde.config.js`.
 
 #### 3. Добавление файла.
 Создайте любой файл в директории `assets` (для наглядности можно использовать картинку).
 
 #### 4. Регистрация хука.
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 const path = require('path')
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/static-assets-hook', { staticDirectories: [path.join(__dirname, 'assets')] }],
+      ['@docusaurus-tde/static-assets-hook', { staticDirectories: [path.join(__dirname, 'assets')] }],
     ]
 }
 ```

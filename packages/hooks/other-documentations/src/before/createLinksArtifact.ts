@@ -1,16 +1,15 @@
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 import { artifactName } from '../constants'
-import { defaultDocumentationLinks } from './defaultDocumentationLinks'
 
 export const createLinksArtifact: pwaDocDI.asyncHook = async ({ source }, context) => {
   const outputFile = path.join(context.constants.customStatic, artifactName)
 
   context.logger.debug(`Output file-path: "${outputFile}".`)
 
-  let data = defaultDocumentationLinks
+  let data = {}
 
   try {
     if (source) {

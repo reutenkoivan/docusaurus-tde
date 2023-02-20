@@ -1,15 +1,9 @@
 {
-  "name": "pwa-doc",
+  "name": "docusaurus-tde",
   "version": "0.1.0",
   "private": true,
-  "description": "Общие решения по документированию инструментов и продуктов привлечения.",
-  "info": {
-    "type": "tech",
-    "doc": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc/",
-    "slack": "#pwa-delivery-ci",
-    "owner": "@ext.ireutenko"
-  },
-  "author": "Ivan Reutenko <ext.ireutenko@tcsbank.ru>",
+  "description": "Wrapper over Docusaurus to make documentation easier to write and maintain for repositories from one author.",
+  "author": "Ivan Reutenko",
   "workspaces": [
     "packages/*",
     "packages/hooks/*",
@@ -27,9 +21,7 @@
     "format": "eslint . --ext .js,.ts,.tsx,.jsx --fix"
   },
   "devDependencies": {
-    "@delivery-ci/notify": "^2.0.0",
     "@tinkoff-monorepo/fix-ts-references": "^1.8.4",
-    "@tinkoff/pvm": "0.53.7",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/node": "^14.17.34",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

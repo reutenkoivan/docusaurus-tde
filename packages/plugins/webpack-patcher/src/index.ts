@@ -1,8 +1,8 @@
-import { Constants } from '@pwa-doc/utils'
+import { Constants } from '@docusaurus-tde/utils'
 
 const constants = new Constants()
 
-const webpackPatcher = (_config, { ignoreNodeModulesExclude = ['@pwa-doc'] }): any => {
+const webpackPatcher = (_config, { ignoreNodeModulesExclude = ['@docusaurus-tde'] }): any => {
     return {
         name: 'webpack-patcher',
         configureWebpack(config: any): any {

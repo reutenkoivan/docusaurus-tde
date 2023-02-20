@@ -3,7 +3,7 @@ import type lodash from 'lodash'
 import type fetch from 'node-fetch'
 import type docusaurusTypes from '@docusaurus/types'
 import type { Signales } from 'signales'
-import type { Constants, copyFile, mkdir, writeFile } from '@pwa-doc/utils'
+import type { Constants, copyFile, mkdir, writeFile } from '@docusaurus-tde/utils'
 
 export namespace pwaDocDI {
   export namespace hooks {

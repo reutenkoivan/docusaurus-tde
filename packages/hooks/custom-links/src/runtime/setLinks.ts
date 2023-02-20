@@ -1,4 +1,4 @@
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 import { createDropdown } from './utils/createDropdown'
 
 export const setLinks: pwaDocDI.runtimeHook = (config, { props, context }) => {

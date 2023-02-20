@@ -6,13 +6,13 @@ export class Constants {
   customStatic: string
 
   constructor() {
-    this.root = path.dirname(require.resolve('@pwa-doc/app/root/docusaurus.config.js'))
+    this.root = path.dirname(require.resolve('@docusaurus-tde/app/root/docusaurus.config.js'))
     this.staticRoot = path.join(this.root, 'static')
     this.customStatic = path.join(this.root, 'static', 'custom')
   }
 
   get configPath(): string {
-    return process.env.PWA_DOC_COFIG_PATH || ''
+    return process.env.DOCUSAURUS_TDE_DOC_COFIG_PATH || ''
   }
 
   get configDir(): string {

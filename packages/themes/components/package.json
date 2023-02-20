@@ -1,19 +1,11 @@
 {
-  "name": "@pwa-doc/components-theme",
-  "version": "0.0.0-stub",
+  "name": "@docusaurus-tde/components-theme",
+  "version": "0.1.0",
   "license": "MIT",
   "files": [
     "doc",
     "lib",
     "src"
   ],
-  "main": "lib/index",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
-  }
+  "main": "lib/index"
 }

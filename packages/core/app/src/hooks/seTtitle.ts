@@ -1,9 +1,9 @@
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 const getCopyright = (title: string): string => {
-  const meta = 'Built with <a href="https://pwa.s3-website.tinkoff.ru/pwa-doc/">@pwa-doc</a> and <a href="https://docusaurus.io/">Docusaurus</a>'
+  const meta = 'Built with <a href="https://github.com/reutenkoivan/docusaurus-tde/">@docusaurus-tde</a> and <a href="https://docusaurus.io/">Docusaurus</a>'
 
-  return `Copyright © ${new Date().getFullYear()} <a href="https://status.tcsbank.ru/">Tinkoff</a> ${title}. ${meta}.`
+  return `${meta}. ${new Date().getFullYear()} ${title} © All rights reserved.`
 }
 
 export const setTitle: pwaDocDI.runtimeHook = (config, { props, context }) => {

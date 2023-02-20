@@ -1,8 +1,8 @@
 const categoryMap = {
-  hooks: 'Хуки',
-  themes: 'Темы',
-  plugins: 'Плагины',
-  unknown: 'Другие пакеты',
+  hooks: 'Hooks',
+  themes: 'Themes',
+  plugins: 'Plugins',
+  unknown: 'Other packages',
 }
 
 const dropdownBuilder = (links) => {

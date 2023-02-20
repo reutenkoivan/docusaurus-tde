@@ -7,7 +7,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl'
 import IconExternalLink from '@theme/IconExternalLink'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
-import docMap from '@pwa-doc/app/root/static/custom/external-links.json'
+import docMap from '@docusaurus-tde/app/root/static/custom/external-links.json'
 import style from './main.module.css'
 
 
@@ -70,7 +70,6 @@ const ExternalLinks = () => {
   const columnClassname = useMemo(() => {
     let className = 'col'
 
-    // Только от 1-4 колонок
     if ([1, 2, 3, 4].includes(numberOfColumns)) {
       className += ` col--${12/numberOfColumns}`
     }
@@ -88,7 +87,7 @@ const ExternalLinks = () => {
         // eslint-disable-next-line no-console
         .catch(error => console.log(error))
     }
-  }, [siteConfig])
+  }, [siteConfig, source])
 
   const rows = splitEvery(
     numberOfColumns,
@@ -109,7 +108,7 @@ const ExternalLinks = () => {
   return (
     <Layout title='other-documentations'>
       <div className={style.header}>
-        <h1 className='hero__title text--center'>Ссылки на другие документации</h1>
+        <h1 className='hero__title text--center'>Links map</h1>
       </div>
       <div className='container'>
         {rows}

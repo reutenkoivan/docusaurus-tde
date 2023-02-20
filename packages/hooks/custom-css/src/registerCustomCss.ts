@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const registerCustomCss: pwaDocDI.runtimeHook = (config, { props, context }) => {
   assert.ok(props.source, 'Prop "source" does not set!')

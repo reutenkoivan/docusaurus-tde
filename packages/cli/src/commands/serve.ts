@@ -1,5 +1,5 @@
 import path from 'path'
-import { Constants } from '@pwa-doc/utils'
+import { Constants } from '@docusaurus-tde/utils'
 import { serve } from '@docusaurus/core/lib'
 import { callHooks } from './utils'
 

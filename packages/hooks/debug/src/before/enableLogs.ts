@@ -1,4 +1,4 @@
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const enableLogs: pwaDocDI.asyncHook = (props) => {
   if (props.logs) {

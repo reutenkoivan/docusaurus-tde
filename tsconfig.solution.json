@@ -31,9 +31,6 @@
             "path": "packages/hooks/gtag"
         },
         {
-            "path": "packages/hooks/pvm-changelog"
-        },
-        {
             "path": "packages/core/utils"
         },
         {

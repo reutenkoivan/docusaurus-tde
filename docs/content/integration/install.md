@@ -3,9 +3,9 @@ title: Установка
 sidebar_position: 1
 ---
 
-### 1. Установить [@pwa-doc/cli](/cli).
+### 1. Установить [@docusaurus-tde/cli](/cli).
 
-### 2. Подключить [@pwa-doc/content-hook](/content).
+### 2. Подключить [@docusaurus-tde/content-hook](/content).
 
 ### 3. Наполнить документацию своим контентом.
 

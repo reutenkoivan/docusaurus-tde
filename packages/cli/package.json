@@ -1,9 +1,9 @@
 {
-  "name": "@pwa-doc/cli",
-  "version": "0.0.0-stub",
+  "name": "@docusaurus-tde/cli",
+  "version": "0.1.0",
   "license": "MIT",
   "bin": {
-    "pwa-doc": "bin.js"
+    "docusaurus-tde": "bin.js"
   },
   "main": "lib/index",
   "files": [
@@ -13,23 +13,14 @@
     "bin.js"
   ],
   "dependencies": {
-    "@pwa-doc/app": "^0.0.0-stub",
-    "@pwa-doc/di": "^0.0.0-stub",
-    "@pwa-doc/utils": "^0.0.0-stub",
-    "@delivery-ci/core": "^5.1.0",
+    "@docusaurus-tde/app": "^0.1.0",
+    "@docusaurus-tde/di": "^0.1.0",
+    "@docusaurus-tde/utils": "^0.1.0",
     "@docusaurus/core": "2.0.0-beta.18",
     "@tinkoff-monorepo/pkgs-collector-workspaces": "^1.8.11",
     "commander": "^8.3.0",
     "inquirer": "^8.2.0",
     "inquirer-table-prompt": "^0.2.1",
     "signales": "^2.0.5"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
   }
 }

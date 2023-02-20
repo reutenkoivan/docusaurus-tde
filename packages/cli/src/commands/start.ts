@@ -1,5 +1,5 @@
 import { start } from '@docusaurus/core/lib'
-import { Constants } from '@pwa-doc/utils'
+import { Constants } from '@docusaurus-tde/utils'
 import { callHooks } from './utils'
 
 const constants = new Constants()

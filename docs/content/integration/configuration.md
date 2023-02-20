@@ -3,14 +3,14 @@ title: Конфигурация
 sidebar_position: 2
 ---
 
-В pwa-doc существуют _**2 типа компонентов**_:
+В docusaurus-tde существуют _**2 типа компонентов**_:
 
 1. _Системные компоненты_ - конфигурируются через параметры конфига.
 2. _Компоненты расширения функциональности_ - конфигурируются через интеграцию хуков.
 
 Системные компоненты это часть стандартной настройки сборки документации,
-а значит они поставляются вместе с базовыми зависимостями pwa-doc. Для их конфигурации нужно
-просто настроить параметры в конфиге **`pwa-doc.config.js`**
+а значит они поставляются вместе с базовыми зависимостями docusaurus-tde. Для их конфигурации нужно
+просто настроить параметры в конфиге **`docusaurus-tde.config.js`**
 
 ```typescript
 interface PwaDocConfig {
@@ -57,21 +57,21 @@ interface PwaDocConfig {
 ```
 
 Для интеграции дополнительной функциональности нужно:
-1. Установить pwa-doc совместимый хук в зависимости
-2. Зарегистрировать хук в pwa-doc конфиг
+1. Установить docusaurus-tde совместимый хук в зависимости
+2. Зарегистрировать хук в docusaurus-tde конфиг
 
 ### Примеры:
 
 ```js
 module.exports = {
   logo: './logo.png',
-  title: 'pwa-doc',
+  title: 'docusaurus-tde',
   navbar: {
     channel: {
       id: 'C02TVB8P5PU',
     },
     gitlab: {
-      url: 'https://gitlab.tcsbank.ru/ded-pwa/pwa-doc',
+      url: 'https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde',
     },
   },
 }
@@ -84,11 +84,11 @@ module.exports = {
       url: 'https://tinkoff.slack.com/archives/C02TVB8P5PU',
     },
     gitlab: {
-      url: 'https://gitlab.tcsbank.ru/ded-pwa/pwa-doc',
+      url: 'https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde',
     },
   },
   hooks: [
-    ['@pwa-doc/content-hook', { contentDir: path.join(__dirname, 'content') }],
+    ['@docusaurus-tde/content-hook', { contentDir: path.join(__dirname, 'content') }],
   ],
 }
 ```

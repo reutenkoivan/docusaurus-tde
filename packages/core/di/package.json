@@ -1,6 +1,6 @@
 {
-  "name": "@pwa-doc/di",
-  "version": "0.0.0-stub",
+  "name": "@docusaurus-tde/di",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "lib/index",
   "files": [
@@ -8,18 +8,10 @@
     "src"
   ],
   "dependencies": {
-    "@pwa-doc/utils": "^0.0.0-stub",
+    "@docusaurus-tde/utils": "^0.1.0",
     "glob": "^7.2.0",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.6",
     "signales": "^2.0.5"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
   }
 }

@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { writeFile } from '@pwa-doc/utils'
+import { writeFile } from '@docusaurus-tde/utils'
 
 import { logger, askAllow } from '../../utils'
 

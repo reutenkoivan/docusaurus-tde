@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 import type { categoryType } from '../types'
 import { defaultDropdownBuilder } from './utils/defaultDropdownBuilder'
 import { getSearchThemeConfig } from './utils/getSearchThemeConfig'

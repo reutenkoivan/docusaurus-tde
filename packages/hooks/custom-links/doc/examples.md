@@ -20,7 +20,7 @@ const linksMap = {
 
 module.exports = {
   hooks: [
-    ['@pwa-doc/custom-links-hook', { linksMap }],
+    ['@docusaurus-tde/custom-links-hook', { linksMap }],
   ]
 }
 ```
@@ -42,7 +42,7 @@ const linksMap = {
 
 module.exports = {
   hooks: [
-    ['@pwa-doc/custom-links-hook', { linksMap, viewType: 'footer' }],
+    ['@docusaurus-tde/custom-links-hook', { linksMap, viewType: 'footer' }],
   ]
 }
 ```
@@ -73,7 +73,7 @@ const linksMap = {
 
 module.exports = {
   hooks: [
-    ['@pwa-doc/custom-links-hook', { linksMap }],
+    ['@docusaurus-tde/custom-links-hook', { linksMap }],
   ]
 }
 ```

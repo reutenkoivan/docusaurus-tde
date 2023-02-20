@@ -1,6 +1,6 @@
 {
-  "name": "@pwa-doc/custom-css-hook",
-  "version": "0.0.0-stub",
+  "name": "@docusaurus-tde/custom-css-hook",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "lib/index",
   "files": [
@@ -9,14 +9,6 @@
     "src"
   ],
   "dependencies": {
-    "@pwa-doc/di": "^0.0.0-stub"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+    "@docusaurus-tde/di": "^0.1.0"
   }
 }

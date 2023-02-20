@@ -2,12 +2,12 @@ import glob from 'glob'
 import lodash from 'lodash'
 import fetch from 'node-fetch'
 import { Signales } from 'signales'
-import { Constants, copyFile, mkdir, writeFile } from '@pwa-doc/utils'
+import { Constants, copyFile, mkdir, writeFile } from '@docusaurus-tde/utils'
 import type docusaurusTypes from '@docusaurus/types'
 import type { pwaDocDI } from '../types'
 
 const logger = new Signales({
-  scope: 'pwa-doc',
+  scope: 'docusaurus-tde',
   disabled: !process.env.PWA_DOC_DEBUG,
 })
 

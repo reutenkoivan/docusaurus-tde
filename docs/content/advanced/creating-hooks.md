@@ -4,9 +4,9 @@ sidebar_label: Как создать хук
 sidebar_position: 2
 ---
 
-> Если вам не хватает текущей функциональности pwa-doc - значит вы готовы создать свой собственный хук!
+> Если вам не хватает текущей функциональности docusaurus-tde - значит вы готовы создать свой собственный хук!
 
-## Создание хука в pwa-doc.
+## Создание хука в docusaurus-tde.
 
 ### 1. Создать пакет
 
@@ -15,8 +15,8 @@ sidebar_position: 2
 
 ```json title='./packages/hooks/<hook-name>/package.json'
 {
-  "name": "@pwa-doc/<hook-name>-hook",
-  "version": "0.0.0-stub",
+  "name": "@docusaurus-tde/<hook-name>-hook",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "lib/index",
   "files": [
@@ -25,7 +25,7 @@ sidebar_position: 2
     "src"
   ],
   "dependencies": {
-    "@pwa-doc/di": "^0.0.0-stub"
+    "@docusaurus-tde/di": "^0.1.0"
   },
   "publishConfig": {
     "access": "public",
@@ -33,7 +33,7 @@ sidebar_position: 2
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/pwa-doc.git"
+    "url": "https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde.git"
   }
 }
 ```
@@ -41,7 +41,7 @@ sidebar_position: 2
 3. Создайте корневой файл
 
 ```typescript title='<hook-name>/src/index.ts'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 const packageJson = require('../package.json')
 
@@ -62,7 +62,7 @@ export default hookSettings
 зависимости от времени их выполнения _(before, runtime, after)._
 
 :::tip Внимание!
-**pwa-doc гарантирует**, что хуки для каждого из ивентов будут выполнены согласно их порядку при регистрации в контракте!
+**docusaurus-tde гарантирует**, что хуки для каждого из ивентов будут выполнены согласно их порядку при регистрации в контракте!
 
 _Это дает вам больше возможностей при распределении бизнес логики._
 :::
@@ -79,7 +79,7 @@ Before функции - это функции генерации артефак�
 :::
 
 ```typescript title='<hook-name>/src/before/<hook-function-name>.ts'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
  /* Ваш замечательный код */
@@ -91,12 +91,12 @@ export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
 Runtime функции созданы для того, чтоб модифицировать docusaurus конфиг.
 
 :::info
-Архитектурно подразумевается что при реализации runtime-хуков вы будете только подключать @pwa-doc или docusaurus плагины
+Архитектурно подразумевается что при реализации runtime-хуков вы будете только подключать @docusaurus-tde или docusaurus плагины
 и конфигурировать их согласно пользовательским настройкам.
 :::
 
 ```typescript title='<hook-name>/src/runtime/<hook-function-name>.ts'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.runtimeHook = (config, { props, context }) => {
   /* Ваш невероятный код */
@@ -113,11 +113,11 @@ export const hookFunctionName: pwaDocDI.runtimeHook = (config, { props, context 
 :::
 
 :::caution Внимание!
-**After функции выполняются только после успешного завершения команды _pwa-doc build!_**
+**After функции выполняются только после успешного завершения команды _docusaurus-tde build!_**
 :::
 
 ```typescript title='<hook-name>/src/after/<hook-function-name>.ts'
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
   /* Ваш неповторимый код */
@@ -143,9 +143,9 @@ const hookSettings: pwaDocDI.hooks.settings = {
 }
 ```
 
-### 4. Проверить результат в pwa-doc
+### 4. Проверить результат в docusaurus-tde
 
-Чтоб удостовериться, что все работает так как и задумывалось нужно собрать документацию pwa-doc
+Чтоб удостовериться, что все работает так как и задумывалось нужно собрать документацию docusaurus-tde
 с каждым из пользовательских сценариев.
 
 ### 5. Написать документацию
@@ -204,7 +204,7 @@ module.exports = {
 
 ### 4. Подключить хук в конфиг
 
-```javascript title='./docs/pwa-doc.config.js'
+```javascript title='./docs/docusaurus-tde.config.js'
 module.exports = {
   /* --- Другие параметры --- */
   hooks: [

@@ -1,4 +1,4 @@
-import { pwaDocDI } from '@pwa-doc/di'
+import { pwaDocDI } from '@docusaurus-tde/di'
 import { connectToSearch } from './runtime/connectToSearch'
 import { registerContentFolder } from './runtime/registerContentFolder'
 

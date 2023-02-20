@@ -22,24 +22,24 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/other-documentations-hook"
+yarn add -WD "@docusaurus-tde/other-documentations-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/other-documentations-hook"
+npm i "@docusaurus-tde/other-documentations-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Регистрация хука
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/other-documentations-hook', { source: { url: 'https://pwa.s3-website.tinkoff.ru/pwa-doc/custom/external-links.json' } }],
+      ['@docusaurus-tde/other-documentations-hook', { source: { url: 'https://pwa.s3-website.tinkoff.ru/docusaurus-tde/custom/external-links.json' } }],
     ]
 }
 ```

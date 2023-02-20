@@ -22,14 +22,14 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/custom-links-hook"
+yarn add -WD "@docusaurus-tde/custom-links-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/custom-links-hook"
+npm i "@docusaurus-tde/custom-links-hook"
 ```
 </TabItem>
 </Tabs>
@@ -46,13 +46,13 @@ type linksMap = {
 ```
 
 #### 3. Регистрация хука
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 
 const linksMap = require('./linksMap')
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/custom-links-hook', { linksMap }],
+      ['@docusaurus-tde/custom-links-hook', { linksMap }],
     ]
 }
 ```

@@ -29,25 +29,25 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/content-hook"
+yarn add -WD "@docusaurus-tde/content-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/content-hook"
+npm i "@docusaurus-tde/content-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Регистрация хука.
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 const path = require('path')
 
 module.exports = {
     hooks: [
-      ['@pwa-doc/content-hook', { contentDir: path.join(__dirname, 'content') }],
+      ['@docusaurus-tde/content-hook', { contentDir: path.join(__dirname, 'content') }],
     ]
 }
 ```
@@ -59,14 +59,14 @@ module.exports = {
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc create --structure
+yarn docusaurus-tde create --structure
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc create --structure
+npm run docusaurus-tde create --structure
 ```
 </TabItem>
 </Tabs>
@@ -78,14 +78,14 @@ npm run pwa-doc create --structure
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc start
+yarn docusaurus-tde start
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc start
+npm run docusaurus-tde start
 ```
 </TabItem>
 </Tabs>

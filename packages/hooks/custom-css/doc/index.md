@@ -22,27 +22,27 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/custom-css-hook"
+yarn add -WD "@docusaurus-tde/custom-css-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/custom-css-hook"
+npm i "@docusaurus-tde/custom-css-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Создание файла
 Для работы хука необходим css файл в котором можно переопределять стандартные настройки стилизации, для примера создадим пустой файл
-`custom.css` рядом с `pwa-doc.config.js`.
+`custom.css` рядом с `docusaurus-tde.config.js`.
 
 #### 3. Регистрация хука
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 module.exports = {
     hooks: [
-      ['@pwa-doc/custom-css-hook', { source: './custom.css' }],
+      ['@docusaurus-tde/custom-css-hook', { source: './custom.css' }],
     ]
 }
 ```

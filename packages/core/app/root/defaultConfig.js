@@ -2,7 +2,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/vsLight')
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark')
 
 const searchTranslations = {
-  'search_placeholder': 'Поиск',
+  'search_placeholder': 'Search',
   'see_all_results': 'See all results',
   'no_results': 'No results.',
   'search_results_for': 'Search results for "{{ keyword }}"',
@@ -19,7 +19,6 @@ const docusaurusConfig = () => ({
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'defaults/favicon.ico',
-  organizationName: 'Tinkoff',
   projectName: 'Default Project',
   themeConfig: {
     navbar: {
@@ -35,7 +34,7 @@ const docusaurusConfig = () => ({
     },
   },
   plugins: [
-    ['@pwa-doc/webpack-patcher-plugin', { ignoreNodeModulesExclude: ['@pwa-doc'] }],
+    ['@docusaurus-tde/webpack-patcher-plugin', { ignoreNodeModulesExclude: ['@docusaurus-tde'] }],
   ],
   themes: [
     [
@@ -50,7 +49,7 @@ const docusaurusConfig = () => ({
         hashed: true,
         indexPages: true,
         indexBlog: false,
-        language: ['en', 'ru'],
+        language: ['en'],
         highlightSearchTermsOnTargetPage: true,
         docsDir: [],
         translations: searchTranslations,

@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Пакет с cli командами и основными зависимостями pwa-doc.
+Пакет с cli командами и основными зависимостями docusaurus-tde.
 :::
 
 ### Интеграция:
@@ -22,23 +22,23 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/cli"
+yarn add -WD "@docusaurus-tde/cli"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/cli"
+npm i "@docusaurus-tde/cli"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Создание файла конфига
-Создайте директорию `docs` в корне репозитория, а в ней `pwa-doc.config.js`
+Создайте директорию `docs` в корне репозитория, а в ней `docusaurus-tde.config.js`
 
 #### 3. Настройка конфига
-```javascript title="docs/pwa-doc.config.js"
+```javascript title="docs/docusaurus-tde.config.js"
 module.exports = {
   navbar: {
     channel: {
@@ -60,14 +60,14 @@ module.exports = {
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc start
+yarn docusaurus-tde start
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc start
+npm run docusaurus-tde start
 ```
 </TabItem>
 </Tabs>
@@ -85,20 +85,20 @@ npm run pwa-doc start
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc start
+yarn docusaurus-tde start
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc start
+npm run docusaurus-tde start
 ```
 </TabItem>
 </Tabs>
 
 Параметры:
-* **`--config <configPath = './docs/pwa-doc.config.js'>`**
+* **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
@@ -109,20 +109,20 @@ npm run pwa-doc start
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc build
+yarn docusaurus-tde build
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc build
+npm run docusaurus-tde build
 ```
 </TabItem>
 </Tabs>
 
 Параметры:
-* **`--config <configPath = './docs/pwa-doc.config.js'>`**
+* **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
@@ -133,21 +133,21 @@ npm run pwa-doc build
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc serve
+yarn docusaurus-tde serve
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc serve
+npm run docusaurus-tde serve
 ```
 </TabItem>
 </Tabs>
 
 
 Параметры:
-* **`--config <configPath = './docs/pwa-doc.config.js'>`**
+* **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
@@ -158,21 +158,21 @@ npm run pwa-doc serve
 <TabItem value="yarn">
 
 ```shell
-yarn pwa-doc create
+yarn docusaurus-tde create
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm run pwa-doc create
+npm run docusaurus-tde create
 ```
 </TabItem>
 </Tabs>
 
 
 Параметры:
-* **`--config <configPath = './docs/pwa-doc.config.js'>`**
+* **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--structure`** - Инициализация структуры документации.
 * **`--migration`** - Создание файла миграции.
 * **`--help`**

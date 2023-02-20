@@ -1,4 +1,4 @@
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 import { setLinks } from './runtime/setLinks'
 
 const packageJson = require('../package.json')

@@ -1,4 +1,4 @@
-import type { pwaDocDI } from '@pwa-doc/di'
+import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const setBaseUrl: pwaDocDI.runtimeHook = (config, { props, context }) => {
     if (!props.baseUrl) {

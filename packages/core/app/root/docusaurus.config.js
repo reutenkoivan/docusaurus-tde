@@ -1,9 +1,9 @@
-const { Constants } = require('@pwa-doc/utils')
+const { Constants } = require('@docusaurus-tde/utils')
 const {
   requireHooks,
   requireConfig,
   applyRuntimeHooks,
-} = require('@pwa-doc/di')
+} = require('@docusaurus-tde/di')
 
 const { docusaurusConfig } = require('./defaultConfig')
 
@@ -11,7 +11,7 @@ const constants = new Constants()
 const userConfig = requireConfig(constants.configPath)
 
 const hookList = [
-  ['@pwa-doc/app', userConfig],
+  ['@docusaurus-tde/app', userConfig],
   ...(userConfig.hooks || []),
 ]
 

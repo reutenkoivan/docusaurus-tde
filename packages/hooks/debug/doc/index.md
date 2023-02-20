@@ -22,25 +22,25 @@ import TabItem from '@theme/TabItem';
 <TabItem value="yarn">
 
 ```shell
-yarn add -WD "@pwa-doc/debug-hook"
+yarn add -WD "@docusaurus-tde/debug-hook"
 ```
 </TabItem>
 
 <TabItem value="npm">
 
 ```shell
-npm i "@pwa-doc/debug-hook"
+npm i "@docusaurus-tde/debug-hook"
 ```
 </TabItem>
 </Tabs>
 
 #### 2. Регистрация хука
-```javascript title="pwa-doc.config.js"
+```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
     hooks: [
       /* Если включать при сборке в CI - при поиске будут отображаться результаты со страницы дебага */
-      ['@pwa-doc/debug-hook', { enabled: !process.env.CI, logs: !!process.env.CI }],
+      ['@docusaurus-tde/debug-hook', { enabled: !process.env.CI, logs: !!process.env.CI }],
     ]
 }
 ```
