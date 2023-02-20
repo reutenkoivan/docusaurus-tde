@@ -21,6 +21,5 @@ module.exports = {
     ['@docusaurus-tde/content-hook', { contentDir: path.join(__dirname, 'content') }],
     ['@docusaurus-tde/custom-css-hook', { source: './custom.css' }],
     ['@docusaurus-tde/package-documentation-hook', { dropdownBuilder }],
-    '@docusaurus-tde/other-documentations-hook',
   ],
 }

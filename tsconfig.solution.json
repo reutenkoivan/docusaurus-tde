@@ -13,9 +13,6 @@
             "path": "packages/hooks/custom-css"
         },
         {
-            "path": "packages/hooks/other-documentations"
-        },
-        {
             "path": "packages/hooks/package-documentation"
         },
         {
