@@ -37,11 +37,11 @@ sidebar_position: 2
 3. Create a main file
 
 ```typescript title='<hook-name>/src/index.ts'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { HookContractType } from '@docusaurus-tde/di'
 
 const packageJson = require('../package.json')
 
-const hookSettings: pwaDocDI.hooks.settings = {
+const hookSettings: HookContractType = {
   name: '<hook-name>-hook',
   version: packageJson.version,
   before: [],
@@ -74,9 +74,9 @@ This is the place if you need:
 :::
 
 ```typescript title='<hook-name>/src/before/<hook-function-name>.ts'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { AsyncHookType } from '@docusaurus-tde/di'
 
-export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
+export const hookFunctionName: AsyncHookType = (props, context) => {
  /* Your awesome code */
 }
 ```
@@ -91,9 +91,9 @@ and configure them according to user settings.
 :::
 
 ```typescript title='<hook-name>/src/runtime/<hook-function-name>.ts'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const hookFunctionName: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const hookFunctionName: RuntimeHookType = (config, { props, context }) => {
   /* Your awesome code */
 
   return config
@@ -113,9 +113,9 @@ This is the place if you need:
 :::
 
 ```typescript title='<hook-name>/src/after/<hook-function-name>.ts'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { AsyncHookType } from '@docusaurus-tde/di'
 
-export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
+export const hookFunctionName: AsyncHookType = (props, context) => {
   /* Your awesome code */
 }
 ```
@@ -125,11 +125,12 @@ After creating the hook, you need to register it in the contract. Fields _`befor
 and if you do not have, for example, functions for the _after_ event - you can not specify it in the contract.
 
 ```typescript title='<hook-name>/src/index.ts'
+import type { HookContractType } from '@docusaurus-tde/di'
 import { hookFunctionName1 } from './before/<hook-function-name>.ts'
 import { hookFunctionName2 } from './runtime/<hook-function-name>.ts'
 import { hookFunctionName3 } from './after/<hook-function-name>.ts'
 
-const hookSettings: pwaDocDI.hooks.settings = {
+const hookSettings: HookContractType = {
   name: '<hook-name>-hook',
   version: packageJson.version,
   before: [ hookFunctionName1 ],
