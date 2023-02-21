@@ -1,10 +1,10 @@
 import assert from 'assert'
-import { pwaDocDI } from '../types'
+import { FilledHookContractType, HookContractType } from '../types'
 
-const createHookSetting = (hookPath: string, props: Record<string, any> = {}): pwaDocDI.hooks.filledSettings => {
+const createHookSetting = (hookPath: string, props: Record<string, any> = {}): FilledHookContractType => {
   const moduleExport = require(hookPath)
 
-  const hookSettings: pwaDocDI.hooks.settings = moduleExport.name && moduleExport.version
+  const hookSettings: HookContractType = moduleExport.name && moduleExport.version
     ? moduleExport
     : moduleExport.default
 

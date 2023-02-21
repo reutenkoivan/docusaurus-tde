@@ -1,9 +1,9 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { HookContractType } from '@docusaurus-tde/di'
 import { updateConfig } from './runtime/updateConfig'
 
 const packageJson = require('../package.json')
 
-const hookSettings: pwaDocDI.hooks.settings = {
+const hookSettings: HookContractType = {
   name: 'package-documentation-hook',
   version: packageJson.version,
   runtime: [

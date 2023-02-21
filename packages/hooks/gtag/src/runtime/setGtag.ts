@@ -1,7 +1,7 @@
 import assert from 'assert'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const setGtag: pwaDocDI.runtimeHook = (config, { props }) => {
+export const setGtag: RuntimeHookType = (config, { props }) => {
   const { trackingID, anonymizeIP = true } = props
 
   assert.ok(trackingID, '"trackingID" is not defined in "@docusaurus-tde/gtag-hook" props!')

@@ -1,6 +1,6 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const registerStaticFolder: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const registerStaticFolder: RuntimeHookType = (config, { props, context }) => {
   const { staticDirectories = [] } = props
 
   if (staticDirectories.length) {

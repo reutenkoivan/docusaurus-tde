@@ -1,9 +1,9 @@
 import fs from 'fs'
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const registerCustomCss: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const registerCustomCss: RuntimeHookType = (config, { props, context }) => {
   assert.ok(props.source, 'Prop "source" does not set!')
   const isAbsolute = path.isAbsolute(props.source)
   const cssPath = isAbsolute ? props.source : path.resolve(context.constants.configDir, props.source)

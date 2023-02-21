@@ -1,9 +1,9 @@
 import assert from 'assert'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
 const repositoryURLConfigPath = 'navbar.repository.url'
 
-export const setNavbarItems: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const setNavbarItems: RuntimeHookType = (config, { props, context }) => {
   const { lodash } = context.utils
 
   const repositoryURL = lodash.get(props, repositoryURLConfigPath)

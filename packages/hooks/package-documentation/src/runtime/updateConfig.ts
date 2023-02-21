@@ -1,12 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 import type { categoryType } from '../types'
 import { defaultDropdownBuilder } from './utils/defaultDropdownBuilder'
 import { getSearchThemeConfig } from './utils/getSearchThemeConfig'
 
-export const updateConfig: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const updateConfig: RuntimeHookType = (config, { props, context }) => {
   const { docRootName = 'doc', showLastUpdateAuthor = true, showLastUpdateTime = true, dropdownBuilder = defaultDropdownBuilder } = props
 
   const pattern = path.resolve('**', docRootName)

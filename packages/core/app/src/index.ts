@@ -1,4 +1,4 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { HookContractType } from '@docusaurus-tde/di'
 
 import { setLogo } from './hooks/setLogo'
 import { setTitle } from './hooks/seTtitle'
@@ -10,7 +10,7 @@ import { configureThemeConfig } from './hooks/configureThemeConfig'
 
 const packageJson = require('../package.json')
 
-const hookSettings: pwaDocDI.hooks.settings = {
+const hookSettings: HookContractType = {
   name: 'system-hooks',
   version: packageJson.version,
   runtime: [

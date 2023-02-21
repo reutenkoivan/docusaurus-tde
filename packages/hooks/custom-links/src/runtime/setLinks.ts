@@ -1,7 +1,7 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 import { createDropdown } from './utils/createDropdown'
 
-export const setLinks: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const setLinks: RuntimeHookType = (config, { props, context }) => {
   const { viewType = 'header', linksMap } = props
 
   if (viewType === 'footer') {

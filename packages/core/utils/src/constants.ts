@@ -20,6 +20,6 @@ export class Constants {
   }
 
   get isLoggerEnabled(): boolean {
-    return !!process.env.PWA_DOC_DEBUG
+    return !!process.env.DOCUSAURUS_TDE_DEBUG
   }
 }

@@ -1,7 +1,7 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { AsyncHookType } from '@docusaurus-tde/di'
 
-export const enableLogs: pwaDocDI.asyncHook = (props) => {
+export const enableLogs: AsyncHookType = (props) => {
   if (props.logs) {
-    process.env.PWA_DOC_DEBUG = '1'
+    process.env.DOCUSAURUS_TDE_DEBUG = '1'
   }
 }

@@ -1,6 +1,6 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const setPlugins: pwaDocDI.runtimeHook = (config, { props }) => {
+export const setPlugins: RuntimeHookType = (config, { props }) => {
   if (props.plugins) {
     config.plugins.push(...props.plugins)
   }

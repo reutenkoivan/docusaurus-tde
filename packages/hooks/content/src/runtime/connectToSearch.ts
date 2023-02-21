@@ -1,8 +1,8 @@
 import path from 'path'
 import type DocusaurusConfig from '@docusaurus/types'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const connectToSearch: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const connectToSearch: RuntimeHookType = (config, { props, context }) => {
   const { contentDir } = props
 
   const searchTheme: DocusaurusConfig.PluginConfig = config.themes.find(theme => {

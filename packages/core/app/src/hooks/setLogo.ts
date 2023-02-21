@@ -1,7 +1,7 @@
 import path from 'path'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const setLogo: pwaDocDI.runtimeHook = (config, { context, props }) => {
+export const setLogo: RuntimeHookType = (config, { context, props }) => {
     if (!props.logo) {
         return config
     }

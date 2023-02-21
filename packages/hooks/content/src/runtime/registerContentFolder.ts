@@ -1,6 +1,6 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const registerContentFolder: pwaDocDI.runtimeHook = (config, { props }) => {
+export const registerContentFolder: RuntimeHookType = (config, { props }) => {
   const { contentDir, id = 'default', routeBasePath = '/', showLastUpdateAuthor = true, showLastUpdateTime = true } = props
 
   const docScope = {

@@ -3,15 +3,14 @@ import lodash from 'lodash'
 import fetch from 'node-fetch'
 import { Signales } from 'signales'
 import { Constants, copyFile, mkdir, writeFile } from '@docusaurus-tde/utils'
-import type docusaurusTypes from '@docusaurus/types'
-import type { pwaDocDI } from '../types'
+import type { ContextType, DefaultContextType, FilledHookContractType, DocusaurusConfigType } from '../types'
 
 const logger = new Signales({
   scope: 'docusaurus-tde',
-  disabled: !process.env.PWA_DOC_DEBUG,
+  disabled: !process.env.DOCUSAURUS_TDE_DEBUG,
 })
 
-const defaultContext: pwaDocDI.hooks.defaultContext = {
+const defaultContext: DefaultContextType = {
   constants: new Constants(),
   utils: {
     copyFile,
@@ -23,17 +22,17 @@ const defaultContext: pwaDocDI.hooks.defaultContext = {
 }
 
 export const applyRuntimeHooks = (
-  config: docusaurusTypes.Config,
-  hooks: pwaDocDI.hooks.filledSettings[]
-): docusaurusTypes.Config => {
-  return hooks.reduce((patchedConfig,  hookSetting: pwaDocDI.hooks.filledSettings) => {
+  config: DocusaurusConfigType,
+  hooks: FilledHookContractType[]
+): DocusaurusConfigType => {
+  return hooks.reduce((patchedConfig,  hookSetting: FilledHookContractType) => {
     const { name, runtime, props } = hookSetting
 
     const localContext = {
       logger: logger.scope(name),
     }
 
-    const context: pwaDocDI.hooks.context = lodash.merge(defaultContext, localContext)
+    const context: ContextType = lodash.merge(defaultContext, localContext)
 
     if (context.constants.isLoggerEnabled) {
       context.logger.enable()
@@ -51,7 +50,7 @@ const defaultAsyncContext = lodash.merge(defaultContext, {
   },
 })
 
-export const applyAsyncHooks = async (hooks: pwaDocDI.hooks.filledSettings[], hookScope: 'before' | 'after'): Promise<void> => {
+export const applyAsyncHooks = async (hooks: FilledHookContractType[], hookScope: 'before' | 'after'): Promise<void> => {
   for (const hookSetting of hooks) {
     const localContext = {
       logger: logger.scope(hookSetting.name),

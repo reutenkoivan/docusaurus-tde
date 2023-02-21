@@ -4,10 +4,10 @@
 const path = require('path')
 const assert = require('assert')
 const commander = require('commander')
-// Const { logger } = require('@delivery-ci/core')
+const { logger } = require('@docusaurus-tde/di')
 const { requireConfig } = require('@docusaurus-tde/di')
 
-const { pwaDocBuild, pwaDocStart, pwaDocServe, create } = require('./lib')
+const { docBuild, docStart, docServe, create } = require('./lib')
 const { defaultConfigPath } = require('./lib/constants')
 
 const packageJson = require('./package.json')
@@ -15,66 +15,60 @@ const packageJson = require('./package.json')
 const cli = new commander.Command().version(packageJson.version)
 
 cli
-  .description('Собрать документацию в public.')
+  .description('Build documentation.')
   .command('build')
-  .option('--config <configPath>', 'Путь к docusaurus-tde конфигу.', defaultConfigPath)
+  .option('--config <configPath>', 'Path to the docusaurus-tde config.', defaultConfigPath)
   .action(async ({ config }) => {
-    // Logger.header(`docusaurus-tde ${packageJson.version}`)
     process.env.DOCUSAURUS_TDE_DOC_COFIG_PATH = path.resolve(config)
     const userConfig = requireConfig(path.resolve(config))
 
     try {
-      await pwaDocBuild(userConfig)
+      await docBuild(userConfig)
     } catch (e) {
-      // Logger.signal.error(e)
+      logger.error(e)
       process.exit(1)
     }
   })
 
 cli
-  .description('Запустить сервер который отслеживает изменения в файлах документации.')
+  .description('Start the development server of the documentation.')
   .command('start')
-  .option('--config <configPath>', 'Путь к docusaurus-tde конфигу.', defaultConfigPath)
+  .option('--config <configPath>', 'Path to the docusaurus-tde config.', defaultConfigPath)
   .action(async ({ config }) => {
-    // Logger.header(`docusaurus-tde ${packageJson.version}`)
     process.env.DOCUSAURUS_TDE_DOC_COFIG_PATH = path.resolve(config)
     const userConfig = requireConfig(path.resolve(config))
 
     try {
-      await pwaDocStart(userConfig)
+      await docStart(userConfig)
     } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e)
-      // Logger.signal.error(e)
+      logger.error(e)
       process.exit(1)
     }
   })
 
 cli
-  .description('Запустить сервер который раздает статику из public.')
+  .description('Serve the static files.')
   .command('serve')
-  .option('--config <configPath>', 'Путь к docusaurus-tde конфигу.', defaultConfigPath)
+  .option('--config <configPath>', 'Path to the docusaurus-tde config.', defaultConfigPath)
   .action(async ({ config }) => {
-    // Logger.header(`docusaurus-tde ${packageJson.version}`)
     process.env.DOCUSAURUS_TDE_DOC_COFIG_PATH = path.resolve(config)
     const userConfig = requireConfig(path.resolve(config))
 
     try {
-      await pwaDocServe(userConfig)
+      await docServe(userConfig)
     } catch (e) {
-      // Logger.signal.error(e)
+      logger.error(e)
       process.exit(1)
     }
   })
 
 cli
-  .description('Создание структуры файлов документации.')
+  .description('Create the file structure of the documentation.')
   .command('create')
-  .option('--config <configPath>', 'Путь к docusaurus-tde конфигу.', defaultConfigPath)
-  .option('--structure', 'Создать структуру документации', false)
-  .option('--migration', 'Создать миграцию', false)
+  .option('--config <configPath>', 'Path to the docusaurus-tde config.', defaultConfigPath)
+  .option('--structure', 'Initialize the documentation.', false)
+  .option('--migration', 'Initialize the migration guide file.', false)
   .action(async ({ config, structure, migration }) => {
-    // Logger.header(`docusaurus-tde ${packageJson.version}`)
     process.env.DOCUSAURUS_TDE_DOC_COFIG_PATH = path.resolve(config)
     const userConfig = requireConfig(path.resolve(config))
 
@@ -91,7 +85,7 @@ cli
         await create.migration({ config: userConfig })
       }
     } catch (e) {
-      // Logger.signal.error(e)
+      logger.error(e)
       process.exit(1)
     }
   })

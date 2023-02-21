@@ -1,5 +1,5 @@
 import { Signales } from 'signales'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
 const logger = new Signales({
   types: {
@@ -12,7 +12,7 @@ const logger = new Signales({
   },
 })
 
-export const insertDebugPlugin: pwaDocDI.runtimeHook = (config, { props }) => {
+export const insertDebugPlugin: RuntimeHookType = (config, { props }) => {
   const { enabled = true } = props
 
   if (enabled) {

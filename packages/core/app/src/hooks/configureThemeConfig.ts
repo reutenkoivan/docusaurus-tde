@@ -1,6 +1,6 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const configureThemeConfig: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const configureThemeConfig: RuntimeHookType = (config, { props, context }) => {
   const { lodash } = context.utils
   const themeConfig = props.theme
 

@@ -1,8 +1,8 @@
 import path from 'path'
 import assert from 'assert'
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const registerReactPages: pwaDocDI.runtimeHook = (config, { props, context }) => {
+export const registerReactPages: RuntimeHookType = (config, { props, context }) => {
   const { root, routeBasePath = '/' } = props
 
   assert.ok(root, 'Prop "root" is not defined!')

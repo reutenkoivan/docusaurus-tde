@@ -1,6 +1,6 @@
-import type { pwaDocDI } from '@docusaurus-tde/di'
+import type { RuntimeHookType } from '@docusaurus-tde/di'
 
-export const setThemes: pwaDocDI.runtimeHook = (config, { props }) => {
+export const setThemes: RuntimeHookType = (config, { props }) => {
   if (!config.themes) {
     config.themes = []
   }
