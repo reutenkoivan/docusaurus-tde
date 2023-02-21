@@ -1,7 +1,7 @@
+import type docusaurusTypes from '@docusaurus/types'
 import type glob from 'glob'
 import type lodash from 'lodash'
 import type fetch from 'node-fetch'
-import type docusaurusTypes from '@docusaurus/types'
 import type { Signales } from 'signales'
 import type { Constants, copyFile, mkdir, writeFile } from '@docusaurus-tde/utils'
 
@@ -41,10 +41,9 @@ export type AsyncContextType = ContextType & {
 export type AsyncHookType = (_props: Record<string, any>, _context: AsyncContextType) => void | Promise<void>
 
 export type RuntimeHookType = (
-  _config: docusaurusTypes.Config,
+  _config: DocusaurusConfigType,
   _di: { props: Record<string, any>; context: ContextType}
-) => docusaurusTypes.Config
-
+) => DocusaurusConfigType
 
 /* Hooks contracts */
 
