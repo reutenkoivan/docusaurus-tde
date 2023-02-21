@@ -1,6 +1,6 @@
 ---
 title: custom-css-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Добавляет кастомный css файл в сборку.
+Integrate custom css file into the docusaurus-tde build.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,11 +34,11 @@ npm i "@docusaurus-tde/custom-css-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Создание файла
-Для работы хука необходим css файл в котором можно переопределять стандартные настройки стилизации, для примера создадим пустой файл
-`custom.css` рядом с `docusaurus-tde.config.js`.
+#### 2. Connect the hook
+For the hook to work, you need a css file in which you can override the standard styling settings, for example, create an empty file
+`custom.css` next to `docusaurus-tde.config.js`.
 
-#### 3. Регистрация хука
+#### 3. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 module.exports = {
     hooks: [
@@ -47,8 +47,8 @@ module.exports = {
 }
 ```
 
-### [Конфигурация](https://docusaurus.io/docs/styling-layout#global-styles):
-Пример:
+### [Configuration](https://docusaurus.io/docs/styling-layout#global-styles):
+Example of custom css file:
 
 ```css title="custom.css"
 :root {

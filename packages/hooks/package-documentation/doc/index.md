@@ -1,6 +1,6 @@
 ---
 title: package-documentation-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Позволяет инкапсулировать в пакет его документацию.
+Allows you to encapsulate the documentation of the package in a package.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,7 +34,7 @@ npm i "@docusaurus-tde/package-documentation-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Регистрация хука
+#### 2. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
@@ -44,7 +44,7 @@ module.exports = {
 }
 ```
 
-### Конфигурация:
+### Hook configuration:
 ```typescript
 type linkType = {
   label: string;
@@ -53,9 +53,9 @@ type linkType = {
 }
 
 type packageDocumentationHookProps = {
-  docRootName?: string; // 'doc'
-  showLastUpdateAuthor?: boolean; // true
-  showLastUpdateTime?: boolean; // true
+  docRootName?: string; // default: 'doc'
+  showLastUpdateAuthor?: boolean; // default: true
+  showLastUpdateTime?: boolean; // default: true
   dropdownBuilder?: (links: linkType[], props: Required<packageDocumentationHookProps>) => Array<{
     type: 'dropdown',
     label: string;

@@ -1,6 +1,6 @@
 ---
 title: static-assets-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,14 +11,14 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Регистрирует директорию с медиа-фалами.
+Registers a directory with media files.
 :::
 
-После регистрации директории все файлы внутри будут добавлены в приложение документации и станут доступны по своему имени из любой страницы
+After the hook registration, you can use files from the directory in the `*.md[x]` files and the React pages by their name.
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости.
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -36,13 +36,13 @@ npm i "@docusaurus-tde/static-assets-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Создание директории.
-Создайте директорию `<root>/docs/assets` на одном уровне с `docusaurus-tde.config.js`.
+#### 2. Create directory.
+Create a directory `<root>/docs/assets` on the same level as `docusaurus-tde.config.js`.
 
-#### 3. Добавление файла.
-Создайте любой файл в директории `assets` (для наглядности можно использовать картинку).
+#### 3. Add files.
+Create any file in the `assets` directory (for clarity, you can use an image).
 
-#### 4. Регистрация хука.
+#### 4. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 const path = require('path')
 
@@ -53,16 +53,17 @@ module.exports = {
 }
 ```
 
-#### 5. Проверка результата.
-* Подключите в документацию ваш файл по его имени.
-* Запустите сервер документации
+#### 5. Use files.
+* Connect the file in the documentation using his name.
+* Run the documentation server
 
-Например, если вы в директорию `assets` добавили картинку с именем `logo.png`, то ее можно отобразить:
+For example, if you added an image to the `assets` directory with the name `logo.png`, you can display it:
+
 ```markdown
 ![logo](/logo.png)
 ```
 
-### Конфигурация:
+### Hook configuration:
 ```typescript
 type staticAssetsHookProps = {
   staticDirectories: string[];

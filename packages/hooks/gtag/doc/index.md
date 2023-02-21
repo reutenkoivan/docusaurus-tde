@@ -1,6 +1,6 @@
 ---
 title: gtag-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Добавляет в сборку гугл-аналитику.
+Adds the Google Analytics to the documentation.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,7 +34,7 @@ npm i "@docusaurus-tde/gtag-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Регистрация хука
+#### 2. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
@@ -44,10 +44,10 @@ module.exports = {
 }
 ```
 
-### Конфигурация:
+### Hook configuration:
 ```typescript
 type gtagHookProps = {
   trackingID: string;
-  anonymizeIP?: boolean; // true
+  anonymizeIP?: boolean; // default: true
 }
 ```

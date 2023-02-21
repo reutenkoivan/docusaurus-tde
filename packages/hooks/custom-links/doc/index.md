@@ -1,6 +1,6 @@
 ---
 title: custom-links-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Добавляет ссылки на сторонние сайты.
+Integrates the map of links into the header or footer of the documentation.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,8 +34,8 @@ npm i "@docusaurus-tde/custom-links-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Создание контракта
-**custom-links-hook** принимает объект который имплементирует следующий контракт:
+#### 2. Create a map of links
+**custom-links-hook** uses the map of links with the following structure:
 ```typescript
 type linksMap = {
     [category: string]: {
@@ -45,9 +45,8 @@ type linksMap = {
 }
 ```
 
-#### 3. Регистрация хука
+#### 3. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
-
 const linksMap = require('./linksMap')
 
 module.exports = {
@@ -57,17 +56,10 @@ module.exports = {
 }
 ```
 
-### Конфигурация:
+### Hook configuration:
 ```typescript
-type linksMap = {
-  [category: string]: {
-    title: string;
-    items: Array<{ label: string; href: string; }>,
-  }
-}
-
 type contentHookProps = {
   linksMap: linksMap;
-  viewType?: 'header' | 'footer' // 'header'
+  viewType?: 'header' | 'footer' // default: 'header'
 }
 ```

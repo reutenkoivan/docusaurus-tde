@@ -1,18 +1,18 @@
 ---
-title: custom-links-hook/примеры
-sidebar_label: Примеры
+title: custom-links-hook/examples
+sidebar_label: Examples
 ---
 
-### Отображение одного дропдауна в хедере:
+### Displaying a single category in the header:
 
 ```javascript
 const linksMap = {
   default: {
-    title: 'Полезные ссылки',
+    title: 'Useful links',
     items: [
       {
-        label: 'Prom client',
-        href: 'https://github.com/siimon/prom-client'
+        label: 'Awesome library',
+        href: 'https://github.com/reutenkoivan/docusaurus-tde'
       }
     ]
   }
@@ -25,16 +25,16 @@ module.exports = {
 }
 ```
 
-### Отображение одной категории в футере:
+### Displaying a single category in the footer:
 
 ```javascript
 const linksMap = {
   useful: {
-    title: 'Полезные ссылки',
+    title: 'Useful links',
     items: [
       {
-        label: 'Prom client',
-        href: 'https://github.com/siimon/prom-client'
+        label: 'Awesome library',
+        href: 'https://github.com/reutenkoivan/docusaurus-tde'
       }
     ]
   }
@@ -47,24 +47,24 @@ module.exports = {
 }
 ```
 
-### Отображение нескольких дропдаунов в хедере:
+### Displaying multiple categories in the header:
 
 ```javascript
 const linksMap = {
   useful: {
-    title: 'Полезные ссылки',
+    title: 'Useful links',
     items: [
       {
-        label: 'Prom client',
-        href: 'https://github.com/siimon/prom-client'
+        label: 'Awesome library',
+        href: 'https://github.com/reutenkoivan/docusaurus-tde'
       }
     ]
   },
   other: {
-    title: 'Менее полезные ссылки',
+    title: 'Other links',
     items: [
       {
-        label: 'Гитхаб',
+        label: 'GitHub',
         href: 'https://github.com'
       }
     ]

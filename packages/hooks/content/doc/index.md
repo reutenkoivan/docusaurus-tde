@@ -1,6 +1,6 @@
 ---
 title: content-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,19 +11,19 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Регистрирует директорию с файлами документации.
+Connects the directory with the documentation files.
 :::
 
-После регистрации директории все `*.md[x]` файлы внутри будут добавлены в приложение документации как отдельные страницы
-и для каждой из них будет сгенерирован роут в зависимости от пути в файловой системе относительно корневой директории
-и имени файла.
+After the hook registration, the `*.md[x]` files in the directory will be added to the documentation application as separate pages
+and for each of them a route will be generated depending on the path in the file system relative to the root directory
+and the file name.
 
-Поскольку генерация роута происходит автоматически - стоит избегать использования кириллицы в именах файлов и директорий,
-если вы хотите применить кастомные настройки отображения нужно воспользоваться [форматированием из контента](/cookbook/cheat-sheet).
+Because the route generation is automatic, it is best to avoid using other than Latin letters in file and directory names,
+if you want to apply custom display settings, you need to use [formatting from content](/cookbook/cheat-sheet).
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости.
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -41,7 +41,7 @@ npm i "@docusaurus-tde/content-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Регистрация хука.
+#### 2. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 const path = require('path')
 
@@ -52,8 +52,8 @@ module.exports = {
 }
 ```
 
-#### 3. Создание тестовой страницы.
-Выполните команду
+#### 3. Initialize the directory structure.
+Execute the command
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -71,8 +71,8 @@ npm run docusaurus-tde create --structure
 </TabItem>
 </Tabs>
 
-#### 4. Проверка результата.
-Выполните команду
+#### 4. Start the application.
+Execute the command
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -90,7 +90,7 @@ npm run docusaurus-tde start
 </TabItem>
 </Tabs>
 
-### Конфигурация:
+### Available hook options:
 ```typescript
 type contentHookProps = {
   contentDir: string;

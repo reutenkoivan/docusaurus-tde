@@ -1,5 +1,5 @@
 ---
-title: Примеры
+title: Examples
 ---
 
 import BrowserWindow from '@theme/externalComponents/BrowserWindow';

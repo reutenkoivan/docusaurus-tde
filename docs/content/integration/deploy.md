@@ -9,8 +9,7 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::danger
-Route generation in the application is performed in a separate environment from the distribution of static files!
-
+Route generation in the application is performed in a separate environment from the distribution of static files!<br/>
 This why **if** during the static deployment there is a base pathname - then all generated routes will be wrong!
 :::
 

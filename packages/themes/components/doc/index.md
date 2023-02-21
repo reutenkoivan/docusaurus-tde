@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 slug: /
-title: "@docusaurus-tde/components-theme"
-sidebar_label: Описание
+title: "components-theme"
+sidebar_label: Details
 ---
 
 ```mdx-code-block
@@ -11,14 +11,14 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Позволяет расширить список компонентов доступных внутри страниц документации.
+Provides a set of custom components for the docusaurus documentation.
 :::
 
-После регистрации темы внутри `*.md[x]` файлов и react страниц будут доступны кастомные компоненты по алиасу `@theme/externalComponents/*`.
+After the theme registration, you can use custom components in the `*.md[x]` files and the React pages by alias `@theme/externalComponents/*`.
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости.
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -36,7 +36,7 @@ npm i "@docusaurus-tde/components-theme"
 </TabItem>
 </Tabs>
 
-#### 2. Регистрация темы.
+#### 2. Connect the theme
 ```javascript title="docusaurus-tde.config.js"
 module.exports = {
     themes: [
@@ -45,9 +45,8 @@ module.exports = {
 }
 ```
 
-### Доступные компоненты:
+### Available components:
 * **BrowserWindow**
 ```markdown
 import BrowserWindow from '@theme/externalComponents/BrowserWindow';
 ```
-

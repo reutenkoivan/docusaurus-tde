@@ -57,9 +57,8 @@ export default hookSettings
 Inside your package we do not have strict requirements for the structure, but we recommend separating hooks
 into different directories depending on the time of their execution _(before, runtime, after)._
 
-:::tip Attention!
-**docusaurus-tde guarantees**, that the hooks will be executed in the order in which they are specified in the config.
-
+:::tip
+**docusaurus-tde guarantees**, that the hooks will be executed in the order in which they are specified in the config.<br/>
 _It is useful to understand that, because the hooks can modify the docusaurus config._
 :::
 

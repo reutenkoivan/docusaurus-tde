@@ -1,6 +1,6 @@
 ---
 title: react-pages-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Позволяет интегрировать страницы написанные как react компоненты.
+Allows you to integrate pages written as react components.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -36,24 +36,24 @@ npm i "@docusaurus-tde/react-pages-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Создание страниц
-##### 2.1 Создайте корневую директорию для всех react-based страниц.
-Для примера можно создать `<root>/docs/react-pages`.
+#### 2. Create react-based pages
+##### 2.1 Create a directory for the React pages.
+For example, you can create `<root>/docs/react-pages`:
 
 ```shell
 mkdir docs/react-pages
 ```
 
-##### 2.2 Создайте файл `<root>/docs/react-pages/*.js[x]`.
-Для начала лучше создать `index.jsx` файл, из-за того что имя равно "`index`" - для него будет сгенерирован роут "`/`",
-что приведет к отображению этой страницы при переходе на корневой роут документации. _(Вы получили главную страницу!)_
+##### 2.2 Create an `<root>/docs/react-pages/*.js[x]`.
+Better to start with `index.jsx` file, because the name is equal to "`index`" - for it will be generated a route "`/`",
+which will lead to the display of this page when you go to the root route of the documentation. _(You got the main page!)_
 
 ```shell
 touch docs/react-pages/index.jsx
 ```
 
-##### 2.3 Создайте react-компонент.
-Создайте любой react-компонент внутри `index.jsx` и сделайте для него **default export**!
+##### 2.3 Create the React component.
+Create some react component in `index.jsx` and make **default export** for it!
 
 ```jsx
 import React from 'react'
@@ -62,7 +62,7 @@ import Layout from '@theme/Layout'
 const MainPage = () => {
   return (
     <Layout>
-      <h1>Это главная страница!</h1>
+      <h1>My React Page</h1>
     </Layout>
   )
 }
@@ -71,7 +71,7 @@ export default MainPage
 
 ```
 
-#### 3. Регистрация хука
+#### 3. Connect the hook
 
 ```javascript title="docusaurus-tde.config.js"
 const path = require('path')
@@ -83,11 +83,11 @@ module.exports = {
 }
 ```
 
-### Конфигурация:
+### Hook configuration
 
 ```typescript
 type reactPagesHookProps = {
   root: string;
-  routeBasePath?: string; // '/'
+  routeBasePath?: string; // default: '/'
 }
 ```

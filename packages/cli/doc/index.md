@@ -1,6 +1,6 @@
 ---
 title: cli
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,12 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Пакет с cli командами и основными зависимостями docusaurus-tde.
+The package contains the cli commands and the main dependencies of the docusaurus-tde.
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,27 +34,25 @@ npm i "@docusaurus-tde/cli"
 </TabItem>
 </Tabs>
 
-#### 2. Создание файла конфига
-Создайте директорию `docs` в корне репозитория, а в ней `docusaurus-tde.config.js`
+#### 2. Create a config
+Create a directory `docs` in the root of the repository, and in it `docusaurus-tde.config.js`
 
-#### 3. Настройка конфига
+#### 3. Configure the config
 ```javascript title="docs/docusaurus-tde.config.js"
 module.exports = {
   navbar: {
-    channel: {
-      id: '<channel id>', // (1)
+    support: {
+      url: '<link>', // link to the support page
     },
-    gitlab: {
-      url: 'https://gitlab.tcsbank.ru/ded-pwa/<repo name>', // (2)
+    repository: {
+      url: '<link>', // link to the repository
     },
-  },
+  }
 }
 ```
-1. ID вашего публичного slack-канала (можно скопировать в нижней части вкладки about).
-2. Ссылка на ваш репозиторий.
 
-#### 4. Запуск документации
-Выполните команду
+#### 4. Start the documentation
+Execute the following command in the root of the repository:
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -72,14 +70,11 @@ npm run docusaurus-tde start
 </TabItem>
 </Tabs>
 
-После сборки должна быть доступна **пустая** **документация** по ссылке [http://localhost:3000](http://localhost:3000/)
+After the build, the documentation should be available at [http://localhost:3000](http://localhost:3000/).
+For now, the documentation will be empty.
 
-:::caution
-Если у вас возникнут трудности с запуском - можете смело обращаться в [#pwa-sdet-support](slack://channel?id=C02TVB8P5PU&team=T2V37EATG).
-:::
-
-### Команды:
-Запуск приложения документации в режиме разработки:
+### Commands:
+Running the documentation app in development mode:
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -97,13 +92,13 @@ npm run docusaurus-tde start
 </TabItem>
 </Tabs>
 
-Параметры:
+Parameters:
 * **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
 
-Сборка документации в директорию `<root>/public`:
+Build the documentation app to the `<root>/build` directory:
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -121,13 +116,13 @@ npm run docusaurus-tde build
 </TabItem>
 </Tabs>
 
-Параметры:
+Parameters:
 * **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
 
-Раздача собранной документации из `<root>/public`:
+Hosting the documentation app from the `<root>/build` directory:
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -146,13 +141,13 @@ npm run docusaurus-tde serve
 </Tabs>
 
 
-Параметры:
+Parameters:
 * **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
 * **`--help`**
 
 ---
 
-Создание файлов документации:
+Create a template file for the documentation:
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -171,8 +166,8 @@ npm run docusaurus-tde create
 </Tabs>
 
 
-Параметры:
+Parameters:
 * **`--config <configPath = './docs/docusaurus-tde.config.js'>`**
-* **`--structure`** - Инициализация структуры документации.
-* **`--migration`** - Создание файла миграции.
+* **`--structure`** - Initialize the structure of the documentation.
+* **`--migration`** - Initialize the migration guide.
 * **`--help`**

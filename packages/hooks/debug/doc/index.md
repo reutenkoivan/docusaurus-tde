@@ -1,6 +1,6 @@
 ---
 title: debug-hook
-sidebar_label: Описание
+sidebar_label: Details
 sidebar_position: 1
 slug: /
 ---
@@ -11,12 +11,13 @@ import TabItem from '@theme/TabItem';
 ```
 
 :::info TL;DR
-Позволяет при запуске добавить в сборку [@docusaurus/plugin-debug](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-debug).
+Allows to integrate the debug page into the documentation.<br/>
+Uses the [@docusaurus/plugin-debug](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-debug).
 :::
 
-### Интеграция:
+### Integration:
 
-#### 1. Добавление зависимости
+#### 1. Add dependency
 
 <Tabs groupId="package-manager">
 <TabItem value="yarn">
@@ -34,21 +35,24 @@ npm i "@docusaurus-tde/debug-hook"
 </TabItem>
 </Tabs>
 
-#### 2. Регистрация хука
+#### 2. Connect the hook
 ```javascript title="docusaurus-tde.config.js"
 
 module.exports = {
     hooks: [
-      /* Если включать при сборке в CI - при поиске будут отображаться результаты со страницы дебага */
+      /*
+        If enabled during the build stage in the CI - in the search results,
+        you will see the content from the debug page.
+      */
       ['@docusaurus-tde/debug-hook', { enabled: !process.env.CI, logs: !!process.env.CI }],
     ]
 }
 ```
 
-### Конфигурация:
+### Hook configuration:
 ```typescript
 type debugHookProps = {
-  enabled?: boolean; // true
-  logs?: boolean; // false
+  enabled?: boolean; // default: true
+  logs?: boolean; // default: false
 }
 ```
