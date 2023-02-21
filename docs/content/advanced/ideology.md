@@ -1,34 +1,36 @@
 ---
-title: Как работает docusaurus-tde?
-sidebar_label: Как работает docusaurus-tde
+title: How does it work?
+sidebar_label: How does it work
 sidebar_position: 1
 ---
 
-### Контекст
+### Context
 
-Для понимания принципов работы docusaurus-tde нужно знать, что эта система состоит из 2 компонентов:
+If you want to understand the principles of work of docusaurus-tde, you need to know that this system consists of 2 components:
 
-* Приложение docusaurus.
-* Дополнительный код, который настраивает приложение docusaurus.
+* The docusaurus application.
+* Additional code that configures the docusaurus application.
 
-В стандартном использовании docusaurus документации подразумевается, что вы, в корне своего проекта, будете иметь
-отдельную директорию с конфигом, зависимостями и контентом необходимыми для сборки приложения, про сам Docusaurus вы
-можете почитать на [официальном сайте](https://docusaurus.io/).
+In the standard use of docusaurus, the documentation is assumed to be in a separate directory with a config, dependencies and
+content necessary for building the application. About Docusaurus itself you can read on the [official website](https://docusaurus.io/).
 
-В масштабах нашей инфраструктуры мы решили, что можно перенести управление зависимостями и конфигурирование в отдельный
-инструмент, а для пользователей оставить только генерацию контента. (Спойлер полностью вынести конфигурацию нам не
-удалось и пользователи все еще конфигурируют отображение с помощью файлов описывающих структуру контента - `_category_.yml`)
+As for me, it was not convenient to configure similar documentation for each new project, so it was decided to
+move the management of dependencies and configuration to a separate tool, the main goal was to leave only the content generation for the user.
+(As a spoiler, we did not completely remove the configuration from the user, and they still configure the view of the documentation
+with the help of files describing the structure of the content - `_category_.yml`)
 
-Преимуществом docusaurus-tde является то, что для него не нужна отдельная директория для хранения зависимостей, а значит
-понимание конечного репозитория и используемых в нем скриптов становится проще.
+The main advantage of docusaurus-tde is that it does not need a separate directory for storing dependencies, which means
+understanding the final repository and the scripts used in it becomes easier.
+Also, it's simpler to configure the CI/CD pipeline, because you don't need to manage the dependencies for your application
+and the documentation separately.
 
-### Про "Дополнительный код"
+### About the "extra code" which configures the docusaurus application
 
-Весь код, который написан поверх docusaurus - это набор функций, что модифицируют конфиг из
-файла `@docusaurus-tde/app/root/docusaurus.config.js`
+All the code which created over the docusaurus is a set of functions that modify the config from the file
+`node_modules/@docusaurus-tde/app/root/docusaurus.config.js`
 
-Для того чтоб унифицировать этот процесс была реализована механика применения хуков. Хуки - это структуры, в которых
-описаны функции подготовки данных и регистрация этих данных в конфиг docusaurus.
+In order to structure this process, was created the mechanic of hooks. Hook - it's a structure that consists
+of pipelines of functions that can prepare some data or configure the Docusaurus config.
 
 ```typescript
 interface HookContract {
@@ -40,12 +42,14 @@ interface HookContract {
 }
 ```
 
-Как можно заметить в интерфейсе хука есть 3 набора функций: **before**, **runtime** и **after**.
-Эти наборы соотносятся к трём событиям, что могут возникнуть во время запуска/сборки документации.
-Другими словами если разработчику хука нужно **запустить функцию перед** сборкой документации - он помещает ее в
-очередь **before**, для других событий аналогично.
+As you can see in the interface of the hook, there are 3 sets of functions: **before**, **runtime** and **after**.
+These sets correspond to the three events that may occur during the start/build of the documentation.
+In other words, if the developer needs to **run a function before** building the documentation - he puts it in
+the **before** queue, for other events the same.
 
-> Если вы хотите больше узнать про, то как устроены хуки - прочитайте [эту статью](creating-hooks).
+> If you want to know more about how hooks work - read [this article](creating-hooks).
 
-В итоге мы получили полноценную систему которая позволяет скрыть подготовку данных и сложную конфигурацию от пользователя
-за декларативным интерфейсом.
+In final we have a clos
+
+As a result, we got a full-fledged system that allows you to hide data preparation and complex configuration from
+the user behind the declarative interface.

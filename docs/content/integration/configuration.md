@@ -1,29 +1,27 @@
 ---
-title: Конфигурация
+title: Configuration
 sidebar_position: 2
 ---
 
-В docusaurus-tde существуют _**2 типа компонентов**_:
+In docusaurus-tde there are two types of components:
 
-1. _Системные компоненты_ - конфигурируются через параметры конфига.
-2. _Компоненты расширения функциональности_ - конфигурируются через интеграцию хуков.
+1. _System components_ - they are configured through the docusaurus-tde config.
+2. _Custom components_ - they are connected as hooks in the docusaurus-tde config.
 
-Системные компоненты это часть стандартной настройки сборки документации,
-а значит они поставляются вместе с базовыми зависимостями docusaurus-tde. Для их конфигурации нужно
-просто настроить параметры в конфиге **`docusaurus-tde.config.js`**
+The system components are part of the standard documentation build configuration,
+which means they are shipped with the basic docusaurus-tde dependencies.
+To configure them, you just need to set the parameters in the **`docusaurus-tde.config.js`** config.
 
 ```typescript
-interface PwaDocConfig {
+interface DocConfig {
   logo?: string;
   title?: string;
   baseUrl?: string;
   navbar: {
-    channel: {
-      // Один из параметров обязателен!
-      id?: string;
-      url?: string;
+    support: {
+      url: string;
     },
-    gitlab: {
+    repository: {
       url: string;
     },
     items?: Array<{
@@ -56,35 +54,37 @@ interface PwaDocConfig {
 }
 ```
 
-Для интеграции дополнительной функциональности нужно:
-1. Установить docusaurus-tde совместимый хук в зависимости
-2. Зарегистрировать хук в docusaurus-tde конфиг
+If you want to add additional functionality, you need to:
+1. Install the docusaurus-tde compatible hook in the dependencies
+2. Register the hook in the docusaurus-tde config
 
-### Примеры:
+### Example:
 
 ```js
 module.exports = {
   logo: './logo.png',
   title: 'docusaurus-tde',
   navbar: {
-    channel: {
-      id: 'C02TVB8P5PU',
+    support: {
+      url: 'https://github.com/reutenkoivan/docusaurus-tde/issues',
     },
-    gitlab: {
-      url: 'https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde',
+    repository: {
+      url: 'https://github.com/reutenkoivan/docusaurus-tde',
     },
   },
 }
 ```
 
 ```js
+const path = require('path')
+
 module.exports = {
   navbar: {
-    channel: {
-      url: 'https://tinkoff.slack.com/archives/C02TVB8P5PU',
+    support: {
+      url: 'https://github.com/reutenkoivan/docusaurus-tde/issues',
     },
-    gitlab: {
-      url: 'https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde',
+    repository: {
+      url: 'https://github.com/reutenkoivan/docusaurus-tde',
     },
   },
   hooks: [

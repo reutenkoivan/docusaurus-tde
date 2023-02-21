@@ -1,33 +1,29 @@
 ---
-title: Публикация
+title: Deploy
 sidebar_position: 3
 ---
 
-:::danger **Проблема:**
-Генерация роутов приложения происходит в отдельном окружении от раздачи статических файлов!
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
-Из-за этого **если** при деплое статики существует базовый pathname - то все сгенерированные роуты будут неправильными.
+:::danger
+Route generation in the application is performed in a separate environment from the distribution of static files!
+
+This why **if** during the static deployment there is a base pathname - then all generated routes will be wrong!
 :::
 
-Если рассматривать эту проблему на примере **ded-pwa** - большинство статический файлов
-деплоятся в **s3** по эндпоинту
-* `https://s3-website.tinkoff.ru`**`/pfp-static/${CI_PROJECT_NAME}/${CI_COMMIT_REF_SLUG}/`** - для МРа
-* `https://pwa.s3-website.tinkoff.ru`**`/${CI_PROJECT_NAME}/`** - при релизе
-
-Как видно в эндпоинтах существует разный pathname который еще и отличается того что
-используется при локальной разработке (_`http://localhost:3000`**`/`**_).
-
-### Какое решение?
+### So what to do?
 
 :::tip
-Используйте конфигурируемый из окружения параметр базового pathname!
+Use the configurable environment parameter for the base pathname!
 :::
 
-Для локальной разработки ничего конфигурировать не нужно,
-но для CI необходимо настроить динамическую конфигурацию pathname.
+For local development, nothing needs to be configured,
+but for CI you need to configure a dynamic configuration for pathname.
 
-#### 1. Настраиваем конфиг:
-Добавляем настройку `baseUrl` в docusaurus-tde конфиг
+#### 1. Configure the baseUrl in the docusaurus-tde config
 
 ```javascript
 module.exports = {
@@ -35,33 +31,44 @@ module.exports = {
 }
 ```
 
-#### 2. Создаем джобу:
-Пример сборки документации в МРе:
+#### 2. Modify the CI configuration:
+
+<Tabs groupId="ci">
+<TabItem value="GitHub">
 
 ```yaml
-build:docs-mr:
-  image: $NODE_IMAGE
-  variables:
-    # Конфигурируем значение в конфиге.
-    BASE_URL: "/pfp-static/${CI_PROJECT_NAME}/${CI_COMMIT_REF_SLUG}/"
-  script:
-    - yarn docusaurus-tde build
-  artifacts:
-    paths:
-      - public
+jobs:
+  build-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies.
+        run: npm install # or "yarn install", or load from cache
+
+      - name: Build documentation.
+        env:
+          BASE_URL: "/${{ github.repository }}/"
+        run: npm run docusaurus-tde build # or yarn docusaurus-tde build
 ```
 
-Пример сборки документации при релизе:
+</TabItem>
+
+<TabItem value="GitLab">
 
 ```yaml
-build:docs-release:
+build:documentation:
   image: $NODE_IMAGE
   variables:
-    # Конфигурируем значение в конфиге.
+    # set the base url for the current project
     BASE_URL: "/${CI_PROJECT_NAME}/"
   script:
-    - yarn docusaurus-tde build
-  artifacts:
-    paths:
-      - public
+    - npm install # or "yarn install", or load from cache
+    - npm run docusaurus-tde build # or yarn docusaurus-tde build
 ```
+
+</TabItem>
+</Tabs>

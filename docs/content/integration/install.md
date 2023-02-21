@@ -1,15 +1,15 @@
 ---
-title: Установка
+title: Install
 sidebar_position: 1
 ---
 
-### 1. Установить [@docusaurus-tde/cli](/cli).
+### 1. Install the [@docusaurus-tde/cli](/cli).
 
-### 2. Подключить [@docusaurus-tde/content-hook](/content).
+### 2. Connect the [@docusaurus-tde/content-hook](/content).
 
-### 3. Наполнить документацию своим контентом.
+### 3. Create the content structure.
 
 :::tip
-* Для выделения важной информации можно воспользоваться конструкциями из **[шпаргалки](../cookbook/cheat-sheet)**.
-* Для **структурной** **организации** документации существуют хуки (_можно найти под выпадашкой в верхней панели_).
+* You can format your content with following **[cheat sheet](../cookbook/cheat-sheet)**.
+* For creating the content structure you have to use hooks _(see the documentation header)_.
 :::

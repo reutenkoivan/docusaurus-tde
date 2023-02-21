@@ -1,11 +1,12 @@
 ---
-title: Требования к разработке
+title: Development requirements
 sidebar_position: 1
 ---
 
-## Общие правила:
-* Обновление правил линтера должно проходить через обсуждение всех контрибутеров репозитория.
+## General requirements:
+* Changes the rules of the linter should be discussed with all contributors of the repository.
+* The name of the PR should follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
-## Если создается новый пакет:
-* Компоненты должны соответствовать концепциям из раздела "**Продвинутые темы**".
-* Пакет должен быть задокументирован в том же МРе где и создан.
+## Requirements for the new package:
+* Components must follow the concepts in the "**Advanced**" section.
+* The package must be documented in the same PR where it was created.

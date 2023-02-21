@@ -1,17 +1,17 @@
 ---
-title: Как создать хук?
-sidebar_label: Как создать хук
+title: How to create a hook?
+sidebar_label: How to create a hook?
 sidebar_position: 2
 ---
 
-> Если вам не хватает текущей функциональности docusaurus-tde - значит вы готовы создать свой собственный хук!
+> If the current functionality of docusaurus-tde is not enough for you - then you are ready to create your own hook!
 
-## Создание хука в docusaurus-tde.
+## Creating a hook in the docusaurus-tde repository.
 
-### 1. Создать пакет
+### 1. Create a new package
 
-1. Создайте директорию по имени вашего хука (`./packages/hooks/<hook-name>`)
-2. Создайте package.json
+1. Create a directory with the name of your hook (`./packages/hooks/<hook-name>`)
+2. Create a package.json
 
 ```json title='./packages/hooks/<hook-name>/package.json'
 {
@@ -27,18 +27,14 @@ sidebar_position: 2
   "dependencies": {
     "@docusaurus-tde/di": "^0.1.0"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://nexus-new.tcsbank.ru/repository/npm-hosted/"
-  },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.tcsbank.ru/ded-pwa/docusaurus-tde.git"
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }
 ```
 
-3. Создайте корневой файл
+3. Create a main file
 
 ```typescript title='<hook-name>/src/index.ts'
 import type { pwaDocDI } from '@docusaurus-tde/di'
@@ -56,50 +52,51 @@ const hookSettings: pwaDocDI.hooks.settings = {
 export default hookSettings
 ```
 
-### 2. Написать код хука
+### 2. Create a hook
 
-Внутри вашего пакета у нас нет жестких требований к структуре, но мы рекомендуем разделять хуки в разные директории в
-зависимости от времени их выполнения _(before, runtime, after)._
+Inside your package we do not have strict requirements for the structure, but we recommend separating hooks
+into different directories depending on the time of their execution _(before, runtime, after)._
 
-:::tip Внимание!
-**docusaurus-tde гарантирует**, что хуки для каждого из ивентов будут выполнены согласно их порядку при регистрации в контракте!
+:::tip Attention!
+**docusaurus-tde guarantees**, that the hooks will be executed in the order in which they are specified in the config.
 
-_Это дает вам больше возможностей при распределении бизнес логики._
+_It is useful to understand that, because the hooks can modify the docusaurus config._
 :::
 
 #### Before
 
-Before функции - это функции генерации артефактов документации.
+Before pipeline was created for generating files and directories.
 
 :::tip
-Это то самое место если вам нужно:
-* Делать запросы.
-* Парсить файловую систему.
-* Обрабатывать ввод пользователя.
+This is the place if you need:
+* Make a request to the server.
+* Parse the file system.
+* Read the user's input.
 :::
 
 ```typescript title='<hook-name>/src/before/<hook-function-name>.ts'
 import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
- /* Ваш замечательный код */
+ /* Your awesome code */
 }
 ```
 
 #### Runtime
 
-Runtime функции созданы для того, чтоб модифицировать docusaurus конфиг.
+Runtime pipeline was created for modifying the docusaurus config.
 
 :::info
-Архитектурно подразумевается что при реализации runtime-хуков вы будете только подключать @docusaurus-tde или docusaurus плагины
-и конфигурировать их согласно пользовательским настройкам.
+From the architectural point of view, it is assumed that when implementing runtime hooks, you will only connect @docusaurus-tde or docusaurus plugins
+and configure them according to user settings.
 :::
 
 ```typescript title='<hook-name>/src/runtime/<hook-function-name>.ts'
 import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.runtimeHook = (config, { props, context }) => {
-  /* Ваш невероятный код */
+  /* Your awesome code */
+
   return config
 }
 ```
@@ -107,27 +104,26 @@ export const hookFunctionName: pwaDocDI.runtimeHook = (config, { props, context 
 #### After
 
 :::tip
-Эти функции подходят для:
-* Отправки уведомлений.
-* Анализа собранной статики.
+This is the place if you need:
+* Send a notification to the user.
+* Analysis of created static files.
 :::
 
-:::caution Внимание!
-**After функции выполняются только после успешного завершения команды _docusaurus-tde build!_**
+:::caution
+**After hooks are executed only after the successful build of the docusaurus-tde!**
 :::
 
 ```typescript title='<hook-name>/src/after/<hook-function-name>.ts'
 import type { pwaDocDI } from '@docusaurus-tde/di'
 
 export const hookFunctionName: pwaDocDI.asyncHook = (props, context) => {
-  /* Ваш неповторимый код */
+  /* Your awesome code */
 }
 ```
 
-### 3. Описать контракт хука
-После написания бизнес-логики хука все функции нужно зарегистрировать в контракте в зависимости от их назначения.
-Поля _`before`_, _`runtime`_ и _`after`_ опциональны и если у вас нет, например, функций для ивента _after_ - в контракте
-можно не указывать для него пустой массив.
+### 3. Create the hook contract
+After creating the hook, you need to register it in the contract. Fields _`before`_, _`runtime`_ and _`after`_ are optional
+and if you do not have, for example, functions for the _after_ event - you can not specify it in the contract.
 
 ```typescript title='<hook-name>/src/index.ts'
 import { hookFunctionName1 } from './before/<hook-function-name>.ts'
@@ -143,20 +139,20 @@ const hookSettings: pwaDocDI.hooks.settings = {
 }
 ```
 
-### 4. Проверить результат в docusaurus-tde
+### 4. Test the hook manually
 
-Чтоб удостовериться, что все работает так как и задумывалось нужно собрать документацию docusaurus-tde
-с каждым из пользовательских сценариев.
+To make sure that everything works as intended, you need to configure the docusaurus-tde documentation
+with each of the user scenarios.
 
-### 5. Написать документацию
+### 5. Create a documentation for the hook
 
-За основу можете взять документацию из любого существующего хука.
+As reference, you can use the documentation of any existing hook.
 
 ---
 
-## Создание хука в вашем репозитории.
+## Creating a hook outside the docusaurus-tde repository.
 
-### 1. Создать корневой файл хука
+### 1. Create a hooks main file
 
 ```javascript
 module.exports = {
@@ -165,17 +161,18 @@ module.exports = {
 }
 ```
 
-### 2. Написать код хука
+### 2. Implement the hook
 
 ```javascript
 // before/after
 const asyncHookFunctionName = async (props, context) => {
-  /* Ваш креативный код */
+  /* Your awesome code */
 }
 
 // runtime
 const syncHookFunctionName = (config, { props, context }) => {
-  /* Ваш волшебный код */
+  /* Your awesome code */
+
   return config
 }
 
@@ -185,7 +182,7 @@ module.exports = {
 }
 ```
 
-### 3. Подключить код хука
+### 3. Connect the hook to the main file
 
 ```javascript
 const { asyncHookFunctionName, syncHookFunctionName } = require('./hooks')
@@ -202,11 +199,11 @@ module.exports = {
 }
 ```
 
-### 4. Подключить хук в конфиг
+### 4. Connect the hook to the docusaurus-tde config
 
 ```javascript title='./docs/docusaurus-tde.config.js'
 module.exports = {
-  /* --- Другие параметры --- */
+  /* --- Other params --- */
   hooks: [
     [
       require.resolve('./path-to-hook-main-file'),

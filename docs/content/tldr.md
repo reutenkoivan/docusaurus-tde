@@ -5,22 +5,10 @@ sidebar_label: TL;DR
 slug: /
 ---
 
-:::tip &nbsp
-У нас есть сообщество пользователей docusaurus **[#docusaurus-users](slack://channel?id=C01BDJS4ZTQ&team=T2V37EATG)**!
-:::
+## What:
 
-## Что:
+docusaurus-tde - it's a wrapper over the [Docusaurus](https://docusaurus.io/) to generate technical documentation for your tools.
 
-docusaurus-tde - это инструмент, который позволяет декларативно настроить [Docusaurus](https://docusaurus.io/) документацию
-
-## Зачем:
-
-В рамках **pwa** не существовало единого решения по документированию, никто не занимался поддержкой актуальности
-зависимостей, развитием инструментов визуализации информации, именно по этому была разработана платформа docusaurus-tde для
-решения этих задач.
-
-## Как:
-
-В зависимости от того как Вы предпочитаете разбираться в новом инструменте можно
-* [Углубиться в теорию docusaurus-tde](advanced/ideology)
-* [Установить и начать использовать](integration/install)
+## Discover:
+* [Overview](advanced/ideology)
+* [Getting started](integration/install)

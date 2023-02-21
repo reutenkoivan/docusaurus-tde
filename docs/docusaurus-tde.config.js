@@ -1,5 +1,5 @@
 const path = require('path')
-const { dropdownBuilder } = require('./dropdownBuilder')
+const { dropdownBuilder } = require('./utils/dropdownBuilder')
 
 module.exports = {
   logo: './logo.png',
