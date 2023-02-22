@@ -1,9 +1,10 @@
 {
   "name": "docusaurus-tde",
   "version": "0.0.1",
-  "private": true,
-  "description": "Wrapper over Docusaurus to make documentation easier to write and maintain for repositories from one author.",
   "author": "Ivan Reutenko",
+  "private": true,
+  "description": "Wrapper over Docusaurus to make documentation easier to write and maintain.",
+  "license": "MIT",
   "workspaces": [
     "packages/*",
     "packages/hooks/*",
@@ -34,5 +35,10 @@
     "glob": "^7.2.0",
     "signales": "^2.0.5",
     "typescript": "^4.3.5"
+  },
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }

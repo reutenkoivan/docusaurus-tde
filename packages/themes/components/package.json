@@ -2,10 +2,16 @@
   "name": "@docusaurus-tde/components-theme",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "files": [
     "doc",
     "lib",
     "src"
   ],
-  "main": "lib/index"
+  "main": "lib/index",
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
+  }
 }

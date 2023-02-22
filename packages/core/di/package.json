@@ -2,6 +2,7 @@
   "name": "@docusaurus-tde/di",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "main": "lib/index",
   "files": [
     "lib",
@@ -13,5 +14,10 @@
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.6",
     "signales": "^2.0.5"
+  },
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }

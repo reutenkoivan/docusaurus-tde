@@ -2,6 +2,7 @@
   "name": "@docusaurus-tde/cli",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "bin": {
     "docusaurus-tde": "bin.js"
   },
@@ -22,5 +23,10 @@
     "inquirer": "^8.2.0",
     "inquirer-table-prompt": "^0.2.1",
     "signales": "^2.0.5"
+  },
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }

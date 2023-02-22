@@ -2,6 +2,7 @@
   "name": "@docusaurus-tde/webpack-patcher-plugin",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "files": [
     "doc",
     "lib",
@@ -10,5 +11,10 @@
   "main": "lib/index",
   "dependencies": {
     "@docusaurus-tde/utils": "^0.0.1"
+  },
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }
