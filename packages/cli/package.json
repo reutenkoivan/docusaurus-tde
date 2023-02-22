@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/cli",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "bin": {
     "docusaurus-tde": "bin.js"
@@ -13,9 +13,9 @@
     "bin.js"
   ],
   "dependencies": {
-    "@docusaurus-tde/app": "^0.1.0",
-    "@docusaurus-tde/di": "^0.1.0",
-    "@docusaurus-tde/utils": "^0.1.0",
+    "@docusaurus-tde/app": "^0.0.1",
+    "@docusaurus-tde/di": "^0.0.1",
+    "@docusaurus-tde/utils": "^0.0.1",
     "@docusaurus/core": "2.0.0-beta.18",
     "@tinkoff-monorepo/pkgs-collector-workspaces": "^1.8.11",
     "commander": "^8.3.0",

@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-tde",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Wrapper over Docusaurus to make documentation easier to write and maintain for repositories from one author.",
   "author": "Ivan Reutenko",
@@ -18,7 +18,8 @@
     "build": "yarn references && tsc -b ./tsconfig.solution.json",
     "watch": "yarn references && tsc -b ./tsconfig.solution.json --watch",
     "lint": "TIMING=1 eslint . --ext .js,.ts,.tsx,.jsx --report-unused-disable-directives",
-    "format": "eslint . --ext .js,.ts,.tsx,.jsx --fix"
+    "format": "eslint . --ext .js,.ts,.tsx,.jsx --fix",
+    "build:docs": "yarn docusaurus-tde build"
   },
   "devDependencies": {
     "@tinkoff-monorepo/fix-ts-references": "^1.8.4",

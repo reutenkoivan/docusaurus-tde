@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/custom-css-hook",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index",
   "files": [
@@ -9,6 +9,6 @@
     "src"
   ],
   "dependencies": {
-    "@docusaurus-tde/di": "^0.1.0"
+    "@docusaurus-tde/di": "^0.0.1"
   }
 }

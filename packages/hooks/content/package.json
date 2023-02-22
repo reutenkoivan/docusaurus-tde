@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/content-hook",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index",
   "files": [
@@ -10,6 +10,6 @@
   ],
   "dependencies": {
     "@docusaurus/plugin-content-docs": "2.0.0-beta.18",
-    "@docusaurus-tde/di": "^0.1.0"
+    "@docusaurus-tde/di": "^0.0.1"
   }
 }

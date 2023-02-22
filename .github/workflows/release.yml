@@ -1,0 +1,68 @@
+name: Release.
+on:
+  pull_request:
+    types:
+      - closed
+    branches: [ main ]
+
+env:
+  FORCE_COLOR: '1'
+
+jobs:
+  # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: https://registry.npmjs.org/
+      - uses: 8BitJonny/gh-get-current-pr@1.4.0
+        id: PRMeta
+        with:
+          filterOutClosed: true
+          sha: ${{ github.event.pull_request.head.sha }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bootstrap packages
+        run: yarn bootstrap:ci
+
+      - name: Increase package versions.
+        env:
+          PR_TITLE: ${{ steps.PRMeta.outputs.pr_title }}
+          PR_BODY: ${{ steps.PRMeta.outputs.pr_body }}
+        run: node scripts/update.js --debug
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish into NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: node scripts/publish.js
+
+  # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+  deploy-documentation:
+    needs:
+      - release-packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Bootstrap packages
+        run: yarn bootstrap:ci
+
+      - name: Build documentation
+        run: yarn build:docs
+
+      - name: Deploy into github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
