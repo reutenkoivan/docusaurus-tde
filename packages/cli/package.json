@@ -24,7 +24,7 @@
     "inquirer-table-prompt": "^0.2.1",
     "signales": "^2.0.5"
   },
-  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "homepage": "https://reutenkoivan.github.io/docusaurus-tde/cli",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"

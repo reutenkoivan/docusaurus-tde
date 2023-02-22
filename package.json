@@ -36,7 +36,7 @@
     "signales": "^2.0.5",
     "typescript": "^4.3.5"
   },
-  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "homepage": "https://reutenkoivan.github.io/docusaurus-tde",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
