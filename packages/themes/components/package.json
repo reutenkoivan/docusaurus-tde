@@ -9,7 +9,7 @@
     "src"
   ],
   "main": "lib/index",
-  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "homepage": "https://reutenkoivan.github.io/docusaurus-tde/components",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"

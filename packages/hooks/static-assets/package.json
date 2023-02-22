@@ -12,7 +12,7 @@
   "dependencies": {
     "@docusaurus-tde/di": "0.0.3"
   },
-  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "homepage": "https://reutenkoivan.github.io/docusaurus-tde/static-assets",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"

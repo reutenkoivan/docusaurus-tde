@@ -13,7 +13,7 @@
     "@docusaurus/plugin-content-docs": "2.0.0-beta.18",
     "@docusaurus-tde/di": "0.0.3"
   },
-  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "homepage": "https://reutenkoivan.github.io/docusaurus-tde/content",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
