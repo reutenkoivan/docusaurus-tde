@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/di",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",
@@ -9,7 +9,7 @@
     "src"
   ],
   "dependencies": {
-    "@docusaurus-tde/utils": "0.0.2",
+    "@docusaurus-tde/utils": "0.0.3",
     "glob": "^7.2.0",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.6",
