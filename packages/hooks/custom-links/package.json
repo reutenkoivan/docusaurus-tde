@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/custom-links-hook",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",
@@ -10,7 +10,7 @@
     "src"
   ],
   "dependencies": {
-    "@docusaurus-tde/di": "0.0.3"
+    "@docusaurus-tde/di": "0.0.4"
   },
   "homepage": "https://reutenkoivan.github.io/docusaurus-tde/custom-links",
   "repository": {
