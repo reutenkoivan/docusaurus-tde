@@ -89,5 +89,7 @@ module.exports = {
 type reactPagesHookProps = {
   root: string;
   routeBasePath?: string; // default: '/'
+  include?: string[]; // default: undefined
+  exclude?: string[]; // default: undefined
 }
 ```
