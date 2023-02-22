@@ -1,13 +1,11 @@
 name: Pull request.
-
 env:
   FORCE_COLOR: '1'
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
   development:
     runs-on: ubuntu-latest
     steps:
@@ -15,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+
       - name: Bootstrap packages
         run: yarn bootstrap:ci
 

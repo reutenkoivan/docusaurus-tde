@@ -4,7 +4,6 @@ on:
     types:
       - closed
     branches: [ main ]
-
 env:
   FORCE_COLOR: '1'
 
@@ -42,9 +41,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: node scripts/publish.js
-
   # --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-
   deploy-documentation:
     needs:
       - release-packages
