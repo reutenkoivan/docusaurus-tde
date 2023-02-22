@@ -1,10 +1,16 @@
 {
   "name": "@docusaurus-tde/utils",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "main": "lib/index",
   "files": [
     "lib",
     "src"
-  ]
+  ],
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
+  }
 }

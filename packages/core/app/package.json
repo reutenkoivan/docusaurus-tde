@@ -1,7 +1,8 @@
 {
   "name": "@docusaurus-tde/app",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "author": "Ivan Reutenko",
   "main": "lib/index",
   "files": [
     "doc",
@@ -13,9 +14,9 @@
     "@docusaurus/core": "2.0.0-beta.18",
     "@docusaurus/theme-classic": "2.0.0-beta.18",
     "@mdx-js/react": "^1.6.21",
-    "@docusaurus-tde/utils": "^0.1.0",
-    "@docusaurus-tde/di": "^0.1.0",
-    "@docusaurus-tde/webpack-patcher-plugin": "^0.1.0",
+    "@docusaurus-tde/utils": "^0.0.1",
+    "@docusaurus-tde/di": "^0.0.1",
+    "@docusaurus-tde/webpack-patcher-plugin": "^0.0.1",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
@@ -28,5 +29,10 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.18",
     "@tsconfig/docusaurus": "^1.0.4"
+  },
+  "homepage": "https://github.com/reutenkoivan/docusaurus-tde",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reutenkoivan/docusaurus-tde.git"
   }
 }
