@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/components-theme",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Custom components for the Docusaurus application.",
   "license": "MIT",
   "author": "Ivan Reutenko",

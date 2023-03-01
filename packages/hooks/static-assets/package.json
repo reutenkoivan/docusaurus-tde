@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/static-assets-hook",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Hook for registration media files.",
   "license": "MIT",
   "author": "Ivan Reutenko",
@@ -11,7 +11,7 @@
     "src"
   ],
   "dependencies": {
-    "@docusaurus-tde/di": "0.0.5"
+    "@docusaurus-tde/di": "0.0.6"
   },
   "homepage": "https://reutenkoivan.github.io/docusaurus-tde/static-assets",
   "repository": {

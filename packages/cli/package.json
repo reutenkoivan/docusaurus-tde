@@ -1,6 +1,6 @@
 {
   "name": "@docusaurus-tde/cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "description": "docusaurus-tde CLI commands. Entry point for docusaurus-tde.",
@@ -15,9 +15,9 @@
     "bin.js"
   ],
   "dependencies": {
-    "@docusaurus-tde/app": "0.0.5",
-    "@docusaurus-tde/di": "0.0.5",
-    "@docusaurus-tde/utils": "0.0.5",
+    "@docusaurus-tde/app": "0.0.6",
+    "@docusaurus-tde/di": "0.0.6",
+    "@docusaurus-tde/utils": "0.0.6",
     "@docusaurus/core": "2.0.0-beta.18",
     "@tinkoff-monorepo/pkgs-collector-workspaces": "^1.8.11",
     "commander": "^8.3.0",
