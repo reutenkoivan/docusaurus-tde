@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/app",
   "version": "0.0.5",
+  "description": "Preconfigured Docusaurus application.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/react-pages-hook",
   "version": "0.0.5",
+  "description": "Hook for registration react pages.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

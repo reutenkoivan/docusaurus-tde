@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/content-hook",
   "version": "0.0.5",
+  "description": "Hook for registering *.md[x] pages.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

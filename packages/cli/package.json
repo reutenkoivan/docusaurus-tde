@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "license": "MIT",
   "author": "Ivan Reutenko",
+  "description": "docusaurus-tde CLI commands. Entry point for docusaurus-tde.",
   "bin": {
     "docusaurus-tde": "bin.js"
   },
