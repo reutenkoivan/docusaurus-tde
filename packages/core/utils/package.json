@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/utils",
   "version": "0.0.5",
+  "description": "Utils for creating docusaurus-tde hooks.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

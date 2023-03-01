@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/webpack-patcher-plugin",
   "version": "0.0.5",
+  "description": "Docusaurus plugin for patching webpack config.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "files": [

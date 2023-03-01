@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/custom-css-hook",
   "version": "0.0.5",
+  "description": "Hook for including custom CSS in the docusaurus-tde app.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

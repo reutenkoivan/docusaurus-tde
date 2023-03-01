@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/package-documentation-hook",
   "version": "0.0.5",
+  "description": "Hook for documentation registration from monorepo packages.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

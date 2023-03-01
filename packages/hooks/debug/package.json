@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/debug-hook",
   "version": "0.0.5",
+  "description": "Hook for display debug information.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

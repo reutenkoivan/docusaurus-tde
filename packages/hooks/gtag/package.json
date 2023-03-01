@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/gtag-hook",
   "version": "0.0.5",
+  "description": "Hook for integration Google Gtag.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",

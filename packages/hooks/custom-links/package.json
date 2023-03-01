@@ -1,6 +1,7 @@
 {
   "name": "@docusaurus-tde/custom-links-hook",
   "version": "0.0.5",
+  "description": "Hook for integration custom links into navbar or footer.",
   "license": "MIT",
   "author": "Ivan Reutenko",
   "main": "lib/index",
