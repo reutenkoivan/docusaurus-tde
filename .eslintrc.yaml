@@ -143,12 +143,6 @@ rules:
 # ---------------------------------------------------------------------------------------------------------------------
 
 overrides:
-  - files:
-    - './packages/hooks/pvm-changelog/src/before/formatters/get-boundary-releases.ts'
-    rules:
-      # https://eslint.org/docs/rules/
-      max-depth: ['error', { max: 5 }]
-      max-nested-callbacks: ['error', { max: 3 }]
 # --------
   - files:
     - './packages/**/src/**/*.ts'
@@ -163,10 +157,3 @@ overrides:
       '@typescript-eslint/consistent-type-assertions': 'error'
       '@typescript-eslint/explicit-function-return-type': 'error'
       '@typescript-eslint/member-delimiter-style': 'error'
-  # --------
-  - files:
-    - './packages/hooks/pvm-changelog/components/changelog.jsx'
-    rules:
-      # https://github.com/import-js/eslint-plugin-import#readme
-      import/extensions: 'off'
-      import/no-unresolved: 'off'
